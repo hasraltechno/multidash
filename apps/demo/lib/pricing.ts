@@ -64,13 +64,13 @@ export const comparison: { feature: string; free: boolean }[] = [
   { feature: "Overview dashboard", free: true },
   { feature: "Base UI components", free: true },
   { feature: "Light / dark mode", free: true },
+  { feature: "Data tables: sorting, filters, selection (TanStack)", free: true },
   { feature: "Analytics, E-commerce, CRM, SaaS & Finance dashboards", free: false },
   { feature: "Kanban, Calendar, Chat, Inbox & Invoice apps", free: false },
   { feature: "Working authentication & role-based access", free: false },
   { feature: "Database layer (Drizzle ORM)", free: false },
   { feature: "Payments — Stripe, Midtrans & Xendit", free: false },
   { feature: "i18n (English, Bahasa Indonesia)", free: false },
-  { feature: "Data tables: sorting, filters, selection (TanStack)", free: true },
   { feature: "Data table CSV/Excel export & server-side pagination", free: false },
 ]
 
