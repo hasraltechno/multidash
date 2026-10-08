@@ -133,6 +133,12 @@ export const componentDocs: ComponentDoc[] = [
     examples: [{ id: "basic", title: "Basic" }],
   },
   {
+    slug: "pagination",
+    name: "Pagination",
+    description: "Page navigation with previous/next links and ellipsis gaps.",
+    examples: [{ id: "basic", title: "With page range", description: "getPageRange(current, total) returns the numbers and gaps to render." }],
+  },
+  {
     slug: "popover",
     name: "Popover",
     description: "Rich content in a floating panel, anchored to a trigger.",
@@ -148,6 +154,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { id: "basic", title: "With label" },
       { id: "custom-color", title: "Custom colors" },
+    ],
+  },
+  {
+    slug: "radio-group",
+    name: "Radio Group",
+    description: "A set of options where only one can be selected.",
+    examples: [
+      { id: "basic", title: "Basic" },
+      { id: "cards", title: "Selectable cards", description: "Wrap each option in its label and style the checked state with has-[]." },
     ],
   },
   {
@@ -184,6 +199,30 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    slug: "slider",
+    name: "Slider",
+    description: "Pick a value or a range by dragging a thumb.",
+    examples: [
+      { id: "basic", title: "Single value" },
+      { id: "range", title: "Range", description: "Two values render two thumbs." },
+    ],
+  },
+  {
+    slug: "spinner",
+    name: "Spinner",
+    description: "An animated indicator for loading states.",
+    examples: [{ id: "basic", title: "Sizes and in a button" }],
+  },
+  {
+    slug: "steps",
+    name: "Steps",
+    description: "Shows progress through a multi-step flow.",
+    examples: [
+      { id: "basic", title: "Wizard", description: "current is the zero-based index of the active step." },
+      { id: "vertical", title: "Vertical", description: "Great for order tracking." },
+    ],
+  },
+  {
     slug: "switch",
     name: "Switch",
     description: "A toggle for on/off settings.",
@@ -207,6 +246,12 @@ export const componentDocs: ComponentDoc[] = [
     name: "Textarea",
     description: "A multi-line text field that grows with its content.",
     examples: [{ id: "basic", title: "With label" }],
+  },
+  {
+    slug: "timeline",
+    name: "Timeline",
+    description: "A vertical list of events in chronological order.",
+    examples: [{ id: "basic", title: "Order activity" }],
   },
   {
     slug: "toast",

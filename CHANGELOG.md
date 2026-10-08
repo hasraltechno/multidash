@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- New components: Radio Group, Slider (single and range), Spinner, Pagination (with `getPageRange`), Steps (horizontal/vertical) and Timeline — each with docs and examples
 - Highlight color (magenta, `--highlight` / `-foreground` / `-text`) kept separate from the neutral secondary, with Button `highlight` / `soft-highlight` and Badge `highlight`
 - Info color (`--info`, `--info-foreground`, `--info-text`) with Button `info` / `soft-info`, Badge `info` and Alert `info` variants
 - Button variants: `success`, `warning`, `soft`, `soft-success`, `soft-warning` and `soft-destructive`; Badge `soft` variant

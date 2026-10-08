@@ -36,10 +36,13 @@ import InputStates from "./input/states"
 import InputWithIcon from "./input/with-icon"
 import LabelBasic from "./label/basic"
 import NativeSelectBasic from "./native-select/basic"
+import PaginationBasic from "./pagination/basic"
 import PopoverBasic from "./popover/basic"
 import PopoverShare from "./popover/share"
 import ProgressBasic from "./progress/basic"
 import ProgressCustomColor from "./progress/custom-color"
+import RadioGroupBasic from "./radio-group/basic"
+import RadioGroupCards from "./radio-group/cards"
 import SelectBasic from "./select/basic"
 import SelectGroups from "./select/groups"
 import SeparatorBasic from "./separator/basic"
@@ -47,11 +50,17 @@ import SheetBasic from "./sheet/basic"
 import SheetSides from "./sheet/sides"
 import SkeletonBasic from "./skeleton/basic"
 import SkeletonCard from "./skeleton/card"
+import SliderBasic from "./slider/basic"
+import SliderRange from "./slider/range"
+import SpinnerBasic from "./spinner/basic"
+import StepsBasic from "./steps/basic"
+import StepsVertical from "./steps/vertical"
 import SwitchBasic from "./switch/basic"
 import TableBasic from "./table/basic"
 import TablesStandard from "./tables/standard"
 import TabsBasic from "./tabs/basic"
 import TextareaBasic from "./textarea/basic"
+import TimelineBasic from "./timeline/basic"
 import ToastBasic from "./toast/basic"
 import ToastTypes from "./toast/types"
 import TooltipBasic from "./tooltip/basic"
@@ -103,10 +112,13 @@ export const examples: Record<string, ComponentType> = {
   "input/with-icon": InputWithIcon,
   "label/basic": LabelBasic,
   "native-select/basic": NativeSelectBasic,
+  "pagination/basic": PaginationBasic,
   "popover/basic": PopoverBasic,
   "popover/share": PopoverShare,
   "progress/basic": ProgressBasic,
   "progress/custom-color": ProgressCustomColor,
+  "radio-group/basic": RadioGroupBasic,
+  "radio-group/cards": RadioGroupCards,
   "select/basic": SelectBasic,
   "select/groups": SelectGroups,
   "separator/basic": SeparatorBasic,
@@ -114,11 +126,17 @@ export const examples: Record<string, ComponentType> = {
   "sheet/sides": SheetSides,
   "skeleton/basic": SkeletonBasic,
   "skeleton/card": SkeletonCard,
+  "slider/basic": SliderBasic,
+  "slider/range": SliderRange,
+  "spinner/basic": SpinnerBasic,
+  "steps/basic": StepsBasic,
+  "steps/vertical": StepsVertical,
   "switch/basic": SwitchBasic,
   "table/basic": TableBasic,
   "tables/standard": TablesStandard,
   "tabs/basic": TabsBasic,
   "textarea/basic": TextareaBasic,
+  "timeline/basic": TimelineBasic,
   "toast/basic": ToastBasic,
   "toast/types": ToastTypes,
   "tooltip/basic": TooltipBasic,
