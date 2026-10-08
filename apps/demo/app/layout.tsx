@@ -5,6 +5,7 @@ import { TooltipProvider } from "@multidash/ui/components/tooltip"
 import { AppToaster } from "@/components/app-toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/lib/site"
+import { sidebarScript } from "@/lib/sidebar-script"
 import { themeSettingsScript } from "@/lib/theme-settings"
 
 import "./globals.css"
@@ -45,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Applies saved customizer settings before first paint (no flash). */}
-        <script dangerouslySetInnerHTML={{ __html: themeSettingsScript }} />
+        <script dangerouslySetInnerHTML={{ __html: `${themeSettingsScript};${sidebarScript}` }} />
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

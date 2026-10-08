@@ -26,7 +26,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 - 🌗 **Light / dark / system** theme plus a **theme customizer** — primary color, backgrounds, card style, radius and monochrome
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
 - 🧩 **35 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
-- 📱 **Fully responsive** — mobile sidebar drawer
+- 📱 **Fully responsive** — minimizable sidebar on desktop (⌘B), drawer on mobile
 - ♿ **Accessible** — keyboard navigation, ARIA labels, reduced-motion support
 - 📦 **Turborepo monorepo** — share the UI package across apps
 

@@ -1,6 +1,9 @@
 @import "@multidash/ui/globals.css";
 @import "./theme-presets.css";
 
+/* Styles for the minimized desktop sidebar: the panel itself and everything inside it. */
+@custom-variant collapsed (&:where([data-sidebar="collapsed"] [data-sidebar-panel], [data-sidebar="collapsed"] [data-sidebar-panel] *));
+
 /* Shiki code blocks — dual theme via CSS variables (defaultColor: false). */
 @layer components {
   .code-block pre {
