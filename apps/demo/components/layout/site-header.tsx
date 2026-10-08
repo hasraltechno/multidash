@@ -1,21 +1,20 @@
-import { Bell, Search } from "lucide-react"
+import { Bell } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
-import { Input } from "@multidash/ui/components/input"
 
 import { GitHubIcon } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { siteConfig } from "@/lib/site"
 
 import { MobileNav } from "./mobile-nav"
+import { SearchCommand } from "./search-command"
 import { UserNav } from "./user-nav"
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-2 border-b bg-background/80 px-4 backdrop-blur md:px-6">
       <MobileNav />
-      <div className="relative hidden max-w-sm flex-1 sm:block">
-        <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
-        <Input type="search" placeholder="Search..." className="pl-9" aria-label="Search" />
+      <div className="hidden max-w-sm flex-1 sm:block">
+        <SearchCommand />
       </div>
       <div className="ml-auto flex items-center gap-1">
         <Button variant="ghost" size="icon" asChild>

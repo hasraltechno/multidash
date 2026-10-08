@@ -17,9 +17,11 @@
     "clean": "rm -rf .turbo node_modules"
   },
   "dependencies": {
+    "@daypicker/react": "^10.0.2",
     "@tanstack/react-table": "^9.2.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
     "lucide-react": "^1.52.0",
     "radix-ui": "^1.7.0",
     "sonner": "^2.0.8",

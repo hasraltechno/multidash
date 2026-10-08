@@ -8,7 +8,7 @@ import { Button } from "@multidash/ui/components/button"
 import { CodeBlock } from "@/components/docs/code-block"
 import { ComponentPreview } from "@/components/docs/component-preview"
 import { componentDocs, getComponentDoc } from "@/lib/docs/components"
-import { getComponentDependencies, getDependencies, getExports, readComponentSource } from "@/lib/docs/source"
+import { getAllDependencies, getComponentDependencies, getExports, readComponentSource } from "@/lib/docs/source"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -41,7 +41,7 @@ export default async function ComponentDocPage({ params }: Props) {
 
   const source = await readComponentSource(slug)
   const exports = getExports(source)
-  const dependencies = getDependencies(source)
+  const dependencies = await getAllDependencies(slug)
   const requiredComponents = getComponentDependencies(source)
     .map((dep) => getComponentDoc(dep))
     .filter((dep) => dep !== undefined)

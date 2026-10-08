@@ -30,6 +30,18 @@ export function getComponentDependencies(source: string): string[] {
   return [...source.matchAll(/from "@\/components\/ui\/([\w-]+)"/g)].map((m) => m[1]!).sort()
 }
 
+/** npm packages for a component and every Multidash component it builds on. */
+export async function getAllDependencies(slug: string, seen = new Set<string>()): Promise<string[]> {
+  if (seen.has(slug)) return []
+  seen.add(slug)
+  const source = await readComponentSource(slug)
+  const packages = new Set(getDependencies(source))
+  for (const dep of getComponentDependencies(source)) {
+    for (const pkg of await getAllDependencies(dep, seen)) packages.add(pkg)
+  }
+  return [...packages].sort()
+}
+
 /** npm packages imported by a component (plus the cn() helper's dependencies). */
 export function getDependencies(source: string): string[] {
   const packages = new Set(["clsx", "tailwind-merge"])

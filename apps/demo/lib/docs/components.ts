@@ -61,6 +61,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    slug: "calendar",
+    name: "Calendar",
+    description: "A date grid for picking a day or a range, built on DayPicker.",
+    examples: [
+      { id: "basic", title: "Single date" },
+      { id: "range", title: "Range across two months", description: "mode=\"range\" with numberOfMonths={2}." },
+    ],
+  },
+  {
     slug: "card",
     name: "Card",
     description: "A container that groups related content and actions — from simple panels to image-rich product, article and profile cards.",
@@ -83,6 +92,21 @@ export const componentDocs: ComponentDoc[] = [
     examples: [{ id: "basic", title: "With label" }],
   },
   {
+    slug: "combobox",
+    name: "Combobox",
+    description: "A searchable select — type to filter a long list of options.",
+    examples: [{ id: "basic", title: "Controlled", description: "Selecting the current option again clears it." }],
+  },
+  {
+    slug: "command",
+    name: "Command",
+    description: "A fast, filterable command menu — inline or as a ⌘K palette.",
+    examples: [
+      { id: "basic", title: "Inline menu" },
+      { id: "dialog", title: "Command palette", description: "Toggle with a keyboard shortcut. Try ⌘J / Ctrl+J." },
+    ],
+  },
+  {
     slug: "data-table",
     layout: "full",
     name: "Data Table",
@@ -90,6 +114,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { id: "basic", title: "Sorting and search", description: "Define columns with createDataTableColumnHelper and pass your data." },
       { id: "advanced", title: "Filters, selection and actions", description: "Faceted filters need filterFn: \"oneOf\" on the column. The toolbar prop receives the table for bulk actions." },
+    ],
+  },
+  {
+    slug: "date-picker",
+    name: "Date Picker",
+    description: "A button that opens a calendar in a popover.",
+    examples: [
+      { id: "basic", title: "Basic" },
+      { id: "locale", title: "Locale and disabled days", description: "Format the label for any locale and block dates with a matcher." },
     ],
   },
   {

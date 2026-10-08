@@ -15,6 +15,8 @@ import ButtonSoft from "./button/soft"
 import ButtonStatus from "./button/status"
 import ButtonVariants from "./button/variants"
 import ButtonWithIcon from "./button/with-icon"
+import CalendarBasic from "./calendar/basic"
+import CalendarRange from "./calendar/range"
 import CardBasic from "./card/basic"
 import CardHorizontal from "./card/horizontal"
 import CardImageOverlay from "./card/image-overlay"
@@ -25,8 +27,13 @@ import CardShadowDepths from "./card/shadow-depths"
 import CardVariants from "./card/variants"
 import CardWithAction from "./card/with-action"
 import CheckboxBasic from "./checkbox/basic"
+import ComboboxBasic from "./combobox/basic"
+import CommandBasic from "./command/basic"
+import CommandDialog from "./command/dialog"
 import DataTableAdvanced from "./data-table/advanced"
 import DataTableBasic from "./data-table/basic"
+import DatePickerBasic from "./date-picker/basic"
+import DatePickerLocale from "./date-picker/locale"
 import DialogBasic from "./dialog/basic"
 import DialogConfirm from "./dialog/confirm"
 import DropdownMenuBasic from "./dropdown-menu/basic"
@@ -91,6 +98,8 @@ export const examples: Record<string, ComponentType> = {
   "button/status": ButtonStatus,
   "button/variants": ButtonVariants,
   "button/with-icon": ButtonWithIcon,
+  "calendar/basic": CalendarBasic,
+  "calendar/range": CalendarRange,
   "card/basic": CardBasic,
   "card/horizontal": CardHorizontal,
   "card/image-overlay": CardImageOverlay,
@@ -101,8 +110,13 @@ export const examples: Record<string, ComponentType> = {
   "card/variants": CardVariants,
   "card/with-action": CardWithAction,
   "checkbox/basic": CheckboxBasic,
+  "combobox/basic": ComboboxBasic,
+  "command/basic": CommandBasic,
+  "command/dialog": CommandDialog,
   "data-table/advanced": DataTableAdvanced,
   "data-table/basic": DataTableBasic,
+  "date-picker/basic": DatePickerBasic,
+  "date-picker/locale": DatePickerLocale,
   "dialog/basic": DialogBasic,
   "dialog/confirm": DialogConfirm,
   "dropdown-menu/basic": DropdownMenuBasic,

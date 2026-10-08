@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- New components: Command (cmdk, inline or ⌘K dialog), Combobox, Calendar (DayPicker v10 via `@daypicker/react`) and Date Picker (locale-aware labels, disabled-day matchers)
+- Header search is a ⌘K command palette over every page and component
+- Component install commands now include the npm packages of the components they build on
 - New components: Radio Group, Slider (single and range), Spinner, Pagination (with `getPageRange`), Steps (horizontal/vertical) and Timeline — each with docs and examples
 - Highlight color (magenta, `--highlight` / `-foreground` / `-text`) kept separate from the neutral secondary, with Button `highlight` / `soft-highlight` and Badge `highlight`
 - Info color (`--info`, `--info-foreground`, `--info-text`) with Button `info` / `soft-info`, Badge `info` and Alert `info` variants
