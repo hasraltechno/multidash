@@ -1,4 +1,3 @@
-import { Bell } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
 
 import { GitHubIcon } from "@/components/icons"
@@ -7,6 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { siteConfig } from "@/lib/site"
 
 import { MobileNav } from "./mobile-nav"
+import { Notifications } from "./notifications"
 import { SearchCommand } from "./search-command"
 import { SidebarToggle } from "./sidebar-toggle"
 import { UserNav } from "./user-nav"
@@ -27,10 +27,7 @@ export function SiteHeader() {
         </Button>
         <ThemeToggle />
         <ThemeCustomizer />
-        <Button variant="ghost" size="icon" aria-label="Notifications" className="relative">
-          <Bell />
-          <span className="absolute top-2 right-2 size-2 rounded-full bg-destructive ring-2 ring-background" />
-        </Button>
+        <Notifications />
         <div className="ml-2">
           <UserNav />
         </div>

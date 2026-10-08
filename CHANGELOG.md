@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Notifications panel in the header: unread count badge, All/Unread tabs, mark one or all as read, typed icons, empty state and a link to notification settings
 - Minimizable sidebar: a header toggle or ⌘B / Ctrl+B shrinks the desktop sidebar to icons with tooltips, and sub-menus open as flyouts. The choice persists and is applied before first paint; the mobile sheet stays full width
 - Error pages: 404 (also the real not-found page), 500 (also the route error boundary with retry) and Maintenance, plus a global error fallback; listed under Pages → Error pages
 - Theme customizer (paintbrush in the header): primary color (blue, indigo, purple, green, amber, rose), light background (gray, slate, neutral), dark background (default, navy, zinc, black, mint), card style, radius and monochrome. Saved in localStorage and applied before first paint; every preset keeps WCAG AA contrast
