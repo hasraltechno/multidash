@@ -9,8 +9,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
   <img alt="Multidash dashboard preview" src="./.github/preview.png" />
 </picture>
 
-<!-- TODO: add the live demo link once deployed -->
-[Get Multidash Pro](#-multidash-pro) · [Report a bug](https://github.com/hasraltechno/multidash/issues)
+**[Live demo](https://multidash-app.vercel.app)** · [Get Multidash Pro](#-multidash-pro) · [Report a bug](https://github.com/hasraltechno/multidash/issues)
 
 ---
 
@@ -70,6 +69,8 @@ multidash/
 ```
 
 ## 🎨 Customization
+
+Set your own domain in [`apps/demo/lib/site.ts`](apps/demo/lib/site.ts) (`productionUrl`) or via the `NEXT_PUBLIC_SITE_URL` environment variable — it is used for Open Graph and canonical URLs.
 
 All colors live in [`packages/ui/src/styles/globals.css`](packages/ui/src/styles/globals.css). Change `--primary` to rebrand; chart colors (`--chart-1` … `--chart-5`) are a validated colorblind-safe order — keep the order if you swap hues.
 

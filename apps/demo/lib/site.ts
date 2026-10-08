@@ -1,7 +1,10 @@
+// Canonical production URL — change this when you deploy your own copy.
+const productionUrl = "https://multidash-app.vercel.app"
+
 function resolveSiteUrl() {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL)
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  if (process.env.VERCEL_ENV === "production") return productionUrl
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
   return "http://localhost:3000"
 }
 
@@ -20,6 +23,7 @@ export const siteConfig = {
     "open source dashboard",
   ],
   links: {
+    demo: productionUrl,
     github: "https://github.com/hasraltechno/multidash",
     // Replace with your checkout page (Polar.sh, Lemon Squeezy, Gumroad, ...).
     pro: "https://github.com/hasraltechno/multidash#-multidash-pro",
