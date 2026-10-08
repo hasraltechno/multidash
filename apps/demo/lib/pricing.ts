@@ -47,7 +47,7 @@ export const plans: Plan[] = [
     price: 129,
     billing: "one-time payment",
     description: "For small teams and agencies.",
-    features: ["Everything in Personal", "Up to 5 developers", "Figma design file", "Priority support"],
+    features: ["Everything in Personal", "Up to 5 developers", "Priority support"],
     highlighted: true,
   },
   {

@@ -120,15 +120,15 @@ Need more? **Multidash Pro** builds on this free version with everything you nee
 | --- | :---: | :---: |
 | Overview dashboard | ✅ | ✅ |
 | Base UI components | ✅ | ✅ |
+| Data tables with sorting, filters & selection | ✅ | ✅ |
 | Analytics, E-commerce, CRM, SaaS & Finance dashboards | — | ✅ |
 | Kanban, Calendar, Chat, Inbox, Invoice apps | — | ✅ |
 | Working authentication & role-based access | — | ✅ |
 | Database layer (Drizzle ORM) | — | ✅ |
 | Payments — Stripe, Midtrans & Xendit | — | ✅ |
 | i18n (English, Bahasa Indonesia) | — | ✅ |
-| Data tables with sorting, filters & selection | ✅ | ✅ |
 | Data table CSV/Excel export & server-side pagination | — | ✅ |
-| Figma file & priority support | — | ✅ |
+| Priority support | — | ✅ |
 
 👉 **[See pricing & join the waitlist](https://multidash-app.vercel.app/pricing)**
 
