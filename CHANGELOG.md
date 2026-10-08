@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Tables page now shows three levels — basic, standard and advanced — each with Preview/Code
 - Dropdown Menu checkbox items and an indeterminate Checkbox state
 - Order demo data expanded to 40 rows
+- Card `variant` prop: `default`, `bordered` (2px border, no shadow) and `shadow` (no border, deeper shadow with a faint ring in dark mode), plus shadow-depth and hover-lift examples
 - Five image card examples: article with cover, product, horizontal listing, image overlay and profile with cover
 - Pricing FAQ now uses the Accordion component
 - Status colors split into three roles — `--x` (fills, solid backgrounds), `--x-foreground` (text on solid) and `--x-text` (colored text on the page or a soft tint) — plus `--primary-text`. Fills stay bright (e.g. yellow rating stars) while every text pairing meets WCAG AA 4.5:1 in both themes

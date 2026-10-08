@@ -67,6 +67,8 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { id: "basic", title: "Header, content and footer" },
       { id: "with-action", title: "With header action" },
+      { id: "variants", title: "Variants", description: "default, bordered and shadow — set with the variant prop." },
+      { id: "shadow-depths", title: "Shadow depths", description: "Combine the shadow variant with any Tailwind shadow utility, or lift the card on hover." },
       { id: "image-top", title: "Article with cover image", description: "Remove the top padding with pt-0 and let the image bleed to the edges with overflow-hidden." },
       { id: "product", title: "Product", description: "Badge and wishlist button positioned over the image." },
       { id: "horizontal", title: "Horizontal", description: "Image beside the content from the sm breakpoint; stacked on mobile." },

@@ -21,6 +21,8 @@ import CardImageOverlay from "./card/image-overlay"
 import CardImageTop from "./card/image-top"
 import CardProduct from "./card/product"
 import CardProfile from "./card/profile"
+import CardShadowDepths from "./card/shadow-depths"
+import CardVariants from "./card/variants"
 import CardWithAction from "./card/with-action"
 import CheckboxBasic from "./checkbox/basic"
 import DataTableAdvanced from "./data-table/advanced"
@@ -86,6 +88,8 @@ export const examples: Record<string, ComponentType> = {
   "card/image-top": CardImageTop,
   "card/product": CardProduct,
   "card/profile": CardProfile,
+  "card/shadow-depths": CardShadowDepths,
+  "card/variants": CardVariants,
   "card/with-action": CardWithAction,
   "checkbox/basic": CheckboxBasic,
   "data-table/advanced": DataTableAdvanced,
