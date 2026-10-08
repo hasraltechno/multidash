@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- UI Elements is a collapsible sidebar sub-menu listing every component; it opens automatically inside the section and scrolls the current page into view. The index page becomes an Introduction with installation steps
 - "Get Pro" buttons now link to the pricing page
 
 ## [0.1.0] - 2026-10-08

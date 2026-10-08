@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@multidash/ui/components/card"
 
 import { CodeBlock } from "@/components/docs/code-block"
@@ -8,7 +6,7 @@ import { PageHeader } from "@/components/page-header"
 import { componentDocs } from "@/lib/docs/components"
 
 export const metadata: Metadata = {
-  title: "UI Elements",
+  title: "UI Elements · Introduction",
   description: "Documentation for every free Multidash component — live examples, code and installation.",
 }
 
@@ -43,37 +41,9 @@ export default function UiElementsPage() {
   return (
     <>
       <PageHeader
-        title="UI Elements"
-        description={`${componentDocs.length} free components with live examples and copy-paste code. Built on Radix UI and Tailwind CSS.`}
+        title="Introduction"
+        description={`${componentDocs.length} free components with live examples and copy-paste code, built on Radix UI and Tailwind CSS. Pick a component from the UI Elements menu in the sidebar.`}
       />
-
-      <section aria-labelledby="components-heading" className="space-y-4">
-        <h2 id="components-heading" className="text-lg font-semibold tracking-tight">
-          Components
-        </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {componentDocs.map((doc) => (
-            <Link
-              key={doc.slug}
-              href={`/ui-elements/${doc.slug}`}
-              className="group rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-            >
-              <Card className="h-full gap-2 py-5 transition-colors group-hover:border-primary/50 group-hover:bg-accent/40">
-                <CardHeader className="px-5">
-                  <CardTitle className="flex items-center justify-between">
-                    {doc.name}
-                    <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-                  </CardTitle>
-                  <CardDescription>{doc.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="px-5 text-xs text-muted-foreground">
-                  {doc.examples.length} example{doc.examples.length === 1 ? "" : "s"}
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       <section aria-labelledby="install-heading" className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         <Card>
@@ -117,7 +87,7 @@ export default function UiElementsPage() {
               </Step>
               <Step n={4} title="Copy a component">
                 <p className="text-sm text-muted-foreground">
-                  Open any component above and copy its source from the Installation section into{" "}
+                  Open a component from the sidebar and copy its source from the Installation section into{" "}
                   <code>components/ui/</code>.
                 </p>
               </Step>
