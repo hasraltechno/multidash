@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronRight, Lock, Sparkles } from "lucide-react"
+import { ChevronRight, Lock, PanelLeftClose, PanelLeftOpen, Sparkles } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
 import {
   DropdownMenu,
@@ -18,7 +18,7 @@ import { cn } from "@multidash/ui/lib/utils"
 
 import { Logo } from "@/components/icons"
 import { navGroups, type NavItem } from "@/lib/nav"
-import { useSidebarCollapsed } from "@/lib/sidebar"
+import { toggleSidebar, useSidebarCollapsed } from "@/lib/sidebar"
 import { siteConfig } from "@/lib/site"
 
 /*
@@ -190,16 +190,70 @@ export function SidebarNav({
 }) {
   const pathname = usePathname()
   const collapsed = useSidebarCollapsed()
-  const tooltips = variant === "desktop" && collapsed
+  const desktop = variant === "desktop"
+  const tooltips = desktop && collapsed
+
+  // ⌘B / Ctrl+B toggles the desktop sidebar.
+  useEffect(() => {
+    if (!desktop) return
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key.toLowerCase() === "b" && (event.metaKey || event.ctrlKey) && !event.altKey) {
+        event.preventDefault()
+        toggleSidebar()
+      }
+    }
+    document.addEventListener("keydown", onKeyDown)
+    return () => document.removeEventListener("keydown", onKeyDown)
+  }, [desktop])
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex h-16 shrink-0 items-center gap-2.5 px-5 collapsed:justify-center collapsed:px-0">
-        <Logo className="size-7 shrink-0" />
-        <span className="text-lg font-semibold tracking-tight collapsed:hidden">{siteConfig.name}</span>
-        <span className="rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground collapsed:hidden">
-          FREE
-        </span>
+      <div className="flex h-16 shrink-0 items-center gap-2.5 pr-3 pl-5 collapsed:justify-center collapsed:px-0">
+        {/* Expanded: logo and name, with the minimize button at the end */}
+        <Link href="/" onClick={onNavigate} className="flex min-w-0 items-center gap-2.5 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 collapsed:hidden">
+          <Logo className="size-7 shrink-0" />
+          <span className="text-lg font-semibold tracking-tight">{siteConfig.name}</span>
+          <span className="rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">FREE</span>
+        </Link>
+        {desktop && (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                onClick={toggleSidebar}
+                aria-label="Minimize sidebar"
+                className="ml-auto text-muted-foreground hover:text-foreground collapsed:hidden"
+              >
+                <PanelLeftClose />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="right">
+              Minimize sidebar <kbd className="ml-1 font-mono text-[10px] opacity-70">⌘B</kbd>
+            </TooltipContent>
+          </Tooltip>
+        )}
+        {/* Minimized: the logo turns into the expand button on hover/focus */}
+        {desktop && (
+          <CollapsedTooltip
+            label={
+              <>
+                Expand sidebar <kbd className="ml-1 font-mono text-[10px] opacity-70">⌘B</kbd>
+              </>
+            }
+            enabled={tooltips}
+          >
+            <button
+              type="button"
+              onClick={toggleSidebar}
+              aria-label="Expand sidebar"
+              className="group/expand relative hidden size-10 items-center justify-center rounded-md outline-none hover:bg-sidebar-accent focus-visible:ring-[3px] focus-visible:ring-ring/50 collapsed:flex"
+            >
+              <Logo className="size-7 transition-opacity group-hover/expand:opacity-0 group-focus-visible/expand:opacity-0" />
+              <PanelLeftOpen className="absolute size-5 opacity-0 transition-opacity group-hover/expand:opacity-100 group-focus-visible/expand:opacity-100" aria-hidden />
+            </button>
+          </CollapsedTooltip>
+        )}
       </div>
 
       <nav className="flex-1 space-y-6 overflow-x-hidden overflow-y-auto px-3 py-4 collapsed:space-y-3 collapsed:px-2">

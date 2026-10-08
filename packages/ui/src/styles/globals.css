@@ -194,6 +194,11 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+  /* Lighter icon strokes everywhere (Lucide defaults to 2). CSS beats the stroke-width attribute,
+     so this also covers icons rendered in Server Components. */
+  .lucide {
+    stroke-width: 1.5;
+  }
   /* Tailwind v4 resets buttons to cursor: default — restore the pointer for anything clickable. */
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]) {
