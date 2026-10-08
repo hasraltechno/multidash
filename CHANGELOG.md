@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Component documentation: an overview page plus one page per component with live examples, Preview/Code tabs, copy buttons, dependencies, full source and usage
+- Typography page with heading, paragraph, lead, list, blockquote, inline code and link styles
+- Tabs component (18 free components in total)
 - Pricing page with plan cards, feature comparison and FAQ
 - Pro waitlist form backed by Resend or any JSON webhook, with validation and spam protection
 - Vercel Web Analytics

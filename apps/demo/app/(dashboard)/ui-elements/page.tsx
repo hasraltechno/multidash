@@ -1,34 +1,41 @@
 import type { Metadata } from "next"
-import { Info, Plus, Trash2 } from "lucide-react"
-import { Avatar, AvatarFallback } from "@multidash/ui/components/avatar"
-import { Badge } from "@multidash/ui/components/badge"
-import { Button } from "@multidash/ui/components/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@multidash/ui/components/card"
-import { Progress } from "@multidash/ui/components/progress"
-import { Skeleton } from "@multidash/ui/components/skeleton"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@multidash/ui/components/tooltip"
 
+import { CodeBlock } from "@/components/docs/code-block"
 import { PageHeader } from "@/components/page-header"
+import { componentDocs } from "@/lib/docs/components"
 
-export const metadata: Metadata = { title: "UI Elements" }
+export const metadata: Metadata = {
+  title: "UI Elements",
+  description: "Documentation for every free Multidash component — live examples, code and installation.",
+}
 
-function Section({
-  title,
-  description,
-  children,
-}: {
-  title: string
-  description: string
-  children: React.ReactNode
-}) {
+const inRepoCode = `import { Button } from "@multidash/ui/components/button"
+
+export default function Page() {
+  return <Button>Click me</Button>
+}`
+
+const depsCode = "pnpm add radix-ui class-variance-authority clsx tailwind-merge lucide-react tw-animate-css"
+
+const utilsCode = `import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}`
+
+function Step({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-wrap items-center gap-3">{children}</CardContent>
-    </Card>
+    <li className="relative space-y-3 pl-10">
+      <span className="absolute top-0 left-0 flex size-7 items-center justify-center rounded-full border bg-card text-xs font-semibold">
+        {n}
+      </span>
+      <h3 className="pt-0.5 font-medium">{title}</h3>
+      {children}
+    </li>
   )
 }
 
@@ -37,76 +44,87 @@ export default function UiElementsPage() {
     <>
       <PageHeader
         title="UI Elements"
-        description="The building blocks in @multidash/ui — reuse them in your own pages."
+        description={`${componentDocs.length} free components with live examples and copy-paste code. Built on Radix UI and Tailwind CSS.`}
       />
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <Section title="Buttons" description="Six variants and four sizes.">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
-          <Button variant="link">Link</Button>
-          <Button variant="destructive">
-            <Trash2 /> Delete
-          </Button>
-          <Button size="sm">
-            <Plus /> Small
-          </Button>
-          <Button size="lg">Large</Button>
-          <Button disabled>Disabled</Button>
-        </Section>
 
-        <Section title="Badges" description="Status and labels.">
-          <Badge>Default</Badge>
-          <Badge variant="secondary">Secondary</Badge>
-          <Badge variant="outline">Outline</Badge>
-          <Badge variant="success">Success</Badge>
-          <Badge variant="warning">Warning</Badge>
-          <Badge variant="destructive">Destructive</Badge>
-        </Section>
+      <section aria-labelledby="components-heading" className="space-y-4">
+        <h2 id="components-heading" className="text-lg font-semibold tracking-tight">
+          Components
+        </h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {componentDocs.map((doc) => (
+            <Link
+              key={doc.slug}
+              href={`/ui-elements/${doc.slug}`}
+              className="group rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            >
+              <Card className="h-full gap-2 py-5 transition-colors group-hover:border-primary/50 group-hover:bg-accent/40">
+                <CardHeader className="px-5">
+                  <CardTitle className="flex items-center justify-between">
+                    {doc.name}
+                    <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                  </CardTitle>
+                  <CardDescription>{doc.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="px-5 text-xs text-muted-foreground">
+                  {doc.examples.length} example{doc.examples.length === 1 ? "" : "s"}
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-        <Section title="Avatars" description="Initials fallback with stacking.">
-          <div className="flex -space-x-2">
-            {["JD", "AL", "BS", "RP"].map((i) => (
-              <Avatar key={i} className="size-9 ring-2 ring-card">
-                <AvatarFallback>{i}</AvatarFallback>
-              </Avatar>
-            ))}
-          </div>
-          <Avatar className="size-12">
-            <AvatarFallback className="bg-primary/15 text-primary">MD</AvatarFallback>
-          </Avatar>
-        </Section>
+      <section aria-labelledby="install-heading" className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle id="install-heading">Use in this project</CardTitle>
+            <CardDescription>
+              Every component is already available in the monorepo through the <code>@multidash/ui</code> package.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <CodeBlock code={inRepoCode} title="app/page.tsx" />
+          </CardContent>
+        </Card>
 
-        <Section title="Tooltip" description="Accessible hover and focus hints.">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outline">
-                <Info /> Hover me
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>Tooltips work with keyboard focus too</TooltipContent>
-          </Tooltip>
-        </Section>
-
-        <Section title="Progress" description="Determinate progress bars.">
-          <div className="w-full space-y-3">
-            <Progress value={25} aria-label="25 percent" />
-            <Progress value={60} aria-label="60 percent" />
-            <Progress value={90} aria-label="90 percent" />
-          </div>
-        </Section>
-
-        <Section title="Skeleton" description="Loading placeholders.">
-          <div className="flex w-full items-center gap-4">
-            <Skeleton className="size-12 rounded-full" />
-            <div className="flex-1 space-y-2">
-              <Skeleton className="h-4 w-3/4" />
-              <Skeleton className="h-4 w-1/2" />
-            </div>
-          </div>
-        </Section>
-      </div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Use in another Next.js project</CardTitle>
+            <CardDescription>Components are plain source files — copy the ones you need.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ol className="space-y-6">
+              <Step n={1} title="Install dependencies">
+                <CodeBlock code={depsCode} lang="bash" />
+              </Step>
+              <Step n={2} title="Add the cn() helper">
+                <CodeBlock code={utilsCode} title="lib/utils.ts" />
+              </Step>
+              <Step n={3} title="Add the theme tokens">
+                <p className="text-sm text-muted-foreground">
+                  Copy{" "}
+                  <a
+                    href="https://github.com/hasraltechno/multidash/blob/main/packages/ui/src/styles/globals.css"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium text-primary underline underline-offset-4"
+                  >
+                    globals.css
+                  </a>{" "}
+                  into your app and import it in your root layout.
+                </p>
+              </Step>
+              <Step n={4} title="Copy a component">
+                <p className="text-sm text-muted-foreground">
+                  Open any component above and copy its source from the Installation section into{" "}
+                  <code>components/ui/</code>.
+                </p>
+              </Step>
+            </ol>
+          </CardContent>
+        </Card>
+      </section>
     </>
   )
 }

@@ -1,1 +1,16 @@
 @import "@multidash/ui/globals.css";
+
+/* Shiki code blocks — dual theme via CSS variables (defaultColor: false). */
+@layer components {
+  .code-block pre {
+    @apply min-w-fit bg-transparent px-4 py-3.5;
+  }
+  .code-block .shiki,
+  .code-block .shiki span {
+    color: var(--shiki-light);
+  }
+  .dark .code-block .shiki,
+  .dark .code-block .shiki span {
+    color: var(--shiki-dark);
+  }
+}

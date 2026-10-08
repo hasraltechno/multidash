@@ -1,0 +1,143 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react"
+import { Badge } from "@multidash/ui/components/badge"
+import { Button } from "@multidash/ui/components/button"
+
+import { CodeBlock } from "@/components/docs/code-block"
+import { ComponentPreview } from "@/components/docs/component-preview"
+import { componentDocs, getComponentDoc } from "@/lib/docs/components"
+import { getDependencies, getExports, readComponentSource } from "@/lib/docs/source"
+
+type Props = { params: Promise<{ slug: string }> }
+
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return componentDocs.map((doc) => ({ slug: doc.slug }))
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const doc = getComponentDoc((await params).slug)
+  return doc ? { title: `${doc.name} · UI Elements`, description: doc.description } : {}
+}
+
+function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+  return (
+    <section aria-labelledby={id} className="space-y-4">
+      <h2 id={id} className="scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight">
+        {title}
+      </h2>
+      {children}
+    </section>
+  )
+}
+
+export default async function ComponentDocPage({ params }: Props) {
+  const { slug } = await params
+  const doc = getComponentDoc(slug)
+  if (!doc) notFound()
+
+  const source = await readComponentSource(slug)
+  const exports = getExports(source)
+  const dependencies = getDependencies(source)
+  const index = componentDocs.indexOf(doc)
+  const prev = componentDocs[index - 1]
+  const next = componentDocs[index + 1]
+
+  const importCode = `import {\n${exports.map((e) => `  ${e},`).join("\n")}\n} from "@multidash/ui/components/${slug}"`
+
+  return (
+    <article className="mx-auto w-full max-w-4xl space-y-10">
+      <header className="space-y-3">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-muted-foreground">
+          <Link href="/ui-elements" className="hover:text-foreground">
+            UI Elements
+          </Link>
+          <ChevronRight className="size-3.5" aria-hidden />
+          <span className="text-foreground">{doc.name}</span>
+        </nav>
+        <h1 className="text-3xl font-semibold tracking-tight">{doc.name}</h1>
+        <p className="text-lg text-muted-foreground">{doc.description}</p>
+        {dependencies.includes("radix-ui") && (
+          <Badge variant="secondary">Built on Radix UI</Badge>
+        )}
+      </header>
+
+      <ComponentPreview path={`${slug}/${doc.examples[0]!.id}`} />
+
+      <Section id="installation" title="Installation">
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <p className="text-sm text-muted-foreground">
+              <strong className="font-medium text-foreground">In this repo</strong> — nothing to install. Import it from{" "}
+              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">@multidash/ui</code>.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <p className="text-sm text-muted-foreground">
+              <strong className="font-medium text-foreground">In your own project</strong> — install the dependencies:
+            </p>
+            <CodeBlock code={`pnpm add ${dependencies.join(" ")}`} lang="bash" />
+            <p className="text-sm text-muted-foreground">
+              Then copy the source into{" "}
+              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">components/ui/{slug}.tsx</code>{" "}
+              (requires the <Link href="/ui-elements#install-heading" className="text-primary underline underline-offset-4">cn() helper and theme tokens</Link>):
+            </p>
+            <details className="group rounded-lg border">
+              <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium [&::-webkit-details-marker]:hidden">
+                Show source ({source.split("\n").length} lines)
+                <ChevronRight className="size-4 text-muted-foreground transition-transform group-open:rotate-90" aria-hidden />
+              </summary>
+              <div className="border-t p-3">
+                <CodeBlock code={source} title={`components/ui/${slug}.tsx`} />
+              </div>
+            </details>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="usage" title="Usage">
+        <CodeBlock code={importCode} />
+      </Section>
+
+      {doc.examples.length > 1 && (
+        <Section id="examples" title="Examples">
+          <div className="space-y-10">
+            {doc.examples.slice(1).map((example) => (
+              <div key={example.id} className="space-y-3">
+                <div>
+                  <h3 className="font-semibold tracking-tight">{example.title}</h3>
+                  {example.description && (
+                    <p className="mt-1 text-sm text-muted-foreground">{example.description}</p>
+                  )}
+                </div>
+                <ComponentPreview path={`${slug}/${example.id}`} />
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      <nav aria-label="Component navigation" className="flex items-center justify-between gap-4 border-t pt-6">
+        {prev ? (
+          <Button variant="outline" asChild>
+            <Link href={`/ui-elements/${prev.slug}`}>
+              <ArrowLeft /> {prev.name}
+            </Link>
+          </Button>
+        ) : (
+          <span />
+        )}
+        {next && (
+          <Button variant="outline" asChild>
+            <Link href={`/ui-elements/${next.slug}`}>
+              {next.name} <ArrowRight />
+            </Link>
+          </Button>
+        )}
+      </nav>
+    </article>
+  )
+}
