@@ -1,7 +1,7 @@
 # Multidash
 
-[![Release](https://img.shields.io/github/v/release/hasraltechno/multidash?color=2a78d6)](https://github.com/hasraltechno/multidash/releases)
-[![License: MIT](https://img.shields.io/github/license/hasraltechno/multidash?color=2a78d6)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/hasraltechno/multidash?color=155dfc)](https://github.com/hasraltechno/multidash/releases)
+[![License: MIT](https://img.shields.io/github/license/hasraltechno/multidash?color=155dfc)](LICENSE)
 [![Live demo](https://img.shields.io/badge/demo-live-1baf7a)](https://multidash-app.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)

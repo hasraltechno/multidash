@@ -16,7 +16,7 @@ const colors = {
   border: "#2a2b30",
   text: "#f5f5f6",
   muted: "#9b9ca3",
-  blue: "#3987e5",
+  blue: "#2b7fff",
   orange: "#d95926",
   green: "#22c55e",
 }

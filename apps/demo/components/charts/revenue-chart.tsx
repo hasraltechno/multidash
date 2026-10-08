@@ -42,9 +42,9 @@ export function RevenueChart({ data }: { data: Point[] }) {
           <Area
             type="monotone"
             dataKey="revenue"
-            stroke="var(--chart-1)"
+            stroke="var(--primary)"
             strokeWidth={2}
-            fill="var(--chart-1)"
+            fill="var(--primary)"
             fillOpacity={0.1}
             isAnimationActive={!reducedMotion}
             activeDot={{ r: 5, strokeWidth: 2, stroke: "var(--card)" }}

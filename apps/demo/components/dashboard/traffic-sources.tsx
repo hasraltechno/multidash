@@ -16,7 +16,7 @@ export function TrafficSources({ data }: { data: Source[] }) {
           </div>
           <div className="h-2 w-full">
             <div
-              className="h-full rounded-r-[4px] bg-chart-1"
+              className="h-full rounded-r-[4px] bg-primary"
               style={{ width: `${(d.visitors / max) * 100}%` }}
               title={`${d.source}: ${formatNumber(d.visitors)} visitors`}
             />

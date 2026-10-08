@@ -64,8 +64,8 @@
   --sidebar-accent-foreground: oklch(0.18 0.01 260);
   --sidebar-border: oklch(0.92 0.006 250);
 
-  /* Charts */
-  --chart-1: #2a78d6;
+  /* Charts — a colorblind-safe categorical order for multi-series charts. Single-series charts use --primary. */
+  --chart-1: #155dfc; /* blue-600 */
   --chart-2: #eb6834;
   --chart-3: #1baf7a;
   --chart-4: #eda100;
@@ -116,7 +116,7 @@
   --sidebar-accent-foreground: oklch(0.97 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
 
-  --chart-1: #3987e5;
+  --chart-1: #2b7fff; /* blue-500 */
   --chart-2: #d95926;
   --chart-3: #199e70;
   --chart-4: #c98500;
