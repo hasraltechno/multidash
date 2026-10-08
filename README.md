@@ -23,7 +23,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 
 - ⚡ **Next.js 16 App Router** + React 19 + TypeScript
 - 🎨 **Tailwind CSS v4** with a single token file for rebranding
-- 🌗 **Light / dark / system** theme
+- 🌗 **Light / dark / system** theme plus a **theme customizer** — primary color, backgrounds, card style, radius and monochrome
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
 - 🧩 **25 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
 - 📱 **Fully responsive** — mobile sidebar drawer
@@ -92,7 +92,9 @@ Set your own domain in [`apps/demo/lib/site.ts`](apps/demo/lib/site.ts) (`produc
 
 All colors live in [`packages/ui/src/styles/globals.css`](packages/ui/src/styles/globals.css). Change `--primary` (and `--primary-text`) to rebrand; chart colors (`--chart-1` … `--chart-5`) are a validated colorblind-safe order — keep the order if you swap hues.
 
-Status colors (`success`, `warning`, `destructive`) each have three roles, so bright fills never compromise text contrast:
+The theme customizer presets live in [`apps/demo/app/theme-presets.css`](apps/demo/app/theme-presets.css) — add your own by following the same pattern.
+
+Status colors (`info`, `success`, `warning`, `destructive`, `highlight`) each have three roles, so bright fills never compromise text contrast:
 
 | Token | Use for | Example |
 | --- | --- | --- |

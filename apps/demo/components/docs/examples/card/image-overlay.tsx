@@ -5,7 +5,7 @@ import { Card } from "@multidash/ui/components/card"
 // Text sits on a dark gradient so it stays readable on any photo.
 export default function CardImageOverlay() {
   return (
-    <Card className="relative isolate w-full max-w-md overflow-hidden border-0 py-0">
+    <Card variant="shadow" className="relative isolate w-full max-w-md overflow-hidden py-0">
       <img
         src="https://picsum.photos/id/1039/1000/700"
         alt="Waterfall in a green forest"

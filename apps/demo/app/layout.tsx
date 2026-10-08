@@ -5,6 +5,7 @@ import { TooltipProvider } from "@multidash/ui/components/tooltip"
 import { AppToaster } from "@/components/app-toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/lib/site"
+import { themeSettingsScript } from "@/lib/theme-settings"
 
 import "./globals.css"
 
@@ -42,6 +43,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Applies saved customizer settings before first paint (no flash). */}
+        <script dangerouslySetInnerHTML={{ __html: themeSettingsScript }} />
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <TooltipProvider>{children}</TooltipProvider>

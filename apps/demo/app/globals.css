@@ -1,4 +1,5 @@
 @import "@multidash/ui/globals.css";
+@import "./theme-presets.css";
 
 /* Shiki code blocks — dual theme via CSS variables (defaultColor: false). */
 @layer components {

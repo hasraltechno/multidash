@@ -2,6 +2,7 @@ import { Bell } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
 
 import { GitHubIcon } from "@/components/icons"
+import { ThemeCustomizer } from "@/components/theme-customizer"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { siteConfig } from "@/lib/site"
 
@@ -13,7 +14,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-2 border-b bg-background/80 px-4 backdrop-blur md:px-6">
       <MobileNav />
-      <div className="hidden max-w-sm flex-1 sm:block">
+      <div className="flex max-w-sm sm:flex-1">
         <SearchCommand />
       </div>
       <div className="ml-auto flex items-center gap-1">
@@ -23,6 +24,7 @@ export function SiteHeader() {
           </a>
         </Button>
         <ThemeToggle />
+        <ThemeCustomizer />
         <Button variant="ghost" size="icon" aria-label="Notifications" className="relative">
           <Bell />
           <span className="absolute top-2 right-2 size-2 rounded-full bg-destructive ring-2 ring-background" />

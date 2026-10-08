@@ -37,10 +37,19 @@ export function SearchCommand() {
 
   return (
     <>
+      {/* Icon trigger on small screens, full search box from sm up. */}
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-9 w-full max-w-sm items-center gap-2 rounded-md border border-input bg-transparent px-3 text-sm text-muted-foreground shadow-xs transition-colors outline-none hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        aria-label="Search"
+        className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition-colors outline-none hover:bg-accent focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:hidden"
+      >
+        <Search className="size-4" aria-hidden />
+      </button>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="hidden h-9 w-full max-w-sm items-center gap-2 rounded-md sm:flex border border-input bg-transparent px-3 text-sm text-muted-foreground shadow-xs transition-colors outline-none hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
       >
         <Search className="size-4" aria-hidden />
         <span className="flex-1 text-left">Search...</span>

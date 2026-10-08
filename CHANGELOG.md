@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Theme customizer (paintbrush in the header): primary color (blue, indigo, purple, green, amber, rose), light background (gray, slate, neutral), dark background (default, navy, zinc, black, mint), card style, radius and monochrome. Saved in localStorage and applied before first paint; every preset keeps WCAG AA contrast
 - New components: Command (cmdk, inline or ⌘K dialog), Combobox, Calendar (DayPicker v10 via `@daypicker/react`) and Date Picker (locale-aware labels, disabled-day matchers)
 - Header search is a ⌘K command palette over every page and component
 - Component install commands now include the npm packages of the components they build on
