@@ -1,5 +1,7 @@
 // Pricing content. Edit prices, plan limits and copy here — the pricing page renders from this file.
 
+import { componentDocs } from "@/lib/docs/components"
+
 export type Plan = {
   id: string
   name: string
@@ -26,7 +28,7 @@ export const plans: Plan[] = [
     features: [
       "Overview dashboard",
       "Tables, forms & auth pages",
-      "25 UI components with docs",
+      `${componentDocs.length} UI components with docs`,
       "Light & dark mode",
       "Community support",
     ],
