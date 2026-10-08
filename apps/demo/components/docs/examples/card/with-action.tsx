@@ -23,7 +23,7 @@ export default function CardWithAction() {
       </CardHeader>
       <CardContent>
         <p className="text-3xl font-semibold tracking-tight">$8,900</p>
-        <p className="mt-1 text-xs text-success">+8.5% vs last month</p>
+        <p className="mt-1 text-xs text-success-text">+8.5% vs last month</p>
       </CardContent>
     </Card>
   )

@@ -78,7 +78,7 @@ export default function UiElementsPage() {
                     href="https://github.com/hasraltechno/multidash/blob/main/packages/ui/src/styles/globals.css"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium text-primary underline underline-offset-4"
+                    className="font-medium text-primary-text underline underline-offset-4"
                   >
                     globals.css
                   </a>{" "}

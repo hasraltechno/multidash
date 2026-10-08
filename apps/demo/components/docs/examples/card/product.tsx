@@ -20,7 +20,7 @@ export default function CardProduct() {
           height={600}
           className="aspect-square w-full object-cover"
         />
-        <span className="absolute top-3 left-3 rounded-md bg-destructive px-2 py-0.5 text-xs font-semibold text-white">
+        <span className="absolute top-3 left-3 rounded-md bg-destructive px-2 py-0.5 text-xs font-semibold text-destructive-foreground">
           -20%
         </span>
         <Button
@@ -31,14 +31,14 @@ export default function CardProduct() {
           onClick={() => setLiked(!liked)}
           className="absolute top-3 right-3 rounded-full bg-background/90 shadow-sm backdrop-blur"
         >
-          <Heart className={cn(liked && "fill-destructive text-destructive")} />
+          <Heart className={cn(liked && "fill-destructive text-destructive-text")} />
         </Button>
       </div>
       <CardContent className="space-y-1.5">
         <p className="text-xs text-muted-foreground">Cameras</p>
         <h3 className="font-semibold leading-snug">Retro 35mm Film Camera</h3>
         <div className="flex items-center gap-1 text-sm">
-          <Star className="size-4 fill-warning text-warning" aria-hidden />
+          <Star className="size-4 fill-warning text-warning-text" aria-hidden />
           <span className="font-medium">4.8</span>
           <span className="text-muted-foreground">(212 reviews)</span>
         </div>

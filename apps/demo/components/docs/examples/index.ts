@@ -11,6 +11,8 @@ import BadgeVariants from "./badge/variants"
 import BadgeWithIcon from "./badge/with-icon"
 import ButtonAsLink from "./button/as-link"
 import ButtonSizes from "./button/sizes"
+import ButtonSoft from "./button/soft"
+import ButtonStatus from "./button/status"
 import ButtonVariants from "./button/variants"
 import ButtonWithIcon from "./button/with-icon"
 import CardBasic from "./card/basic"
@@ -74,6 +76,8 @@ export const examples: Record<string, ComponentType> = {
   "badge/with-icon": BadgeWithIcon,
   "button/as-link": ButtonAsLink,
   "button/sizes": ButtonSizes,
+  "button/soft": ButtonSoft,
+  "button/status": ButtonStatus,
   "button/variants": ButtonVariants,
   "button/with-icon": ButtonWithIcon,
   "card/basic": CardBasic,

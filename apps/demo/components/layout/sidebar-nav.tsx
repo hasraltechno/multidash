@@ -31,7 +31,7 @@ function NavLink({ item, pathname, onNavigate }: { item: NavItem; pathname: stri
       <item.icon className="size-4 shrink-0" />
       <span className="flex-1">{item.title}</span>
       {item.pro && (
-        <span className="inline-flex items-center gap-1 rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary">
+        <span className="inline-flex items-center gap-1 rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary-text">
           <Lock className="size-2.5" />
           PRO
         </span>
@@ -136,7 +136,7 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
       <div className="p-3">
         <div className="rounded-lg border bg-gradient-to-br from-primary/10 to-transparent p-4">
           <p className="flex items-center gap-1.5 text-sm font-semibold">
-            <Sparkles className="size-4 text-primary" />
+            <Sparkles className="size-4 text-primary-text" />
             Multidash Pro
           </p>
           <p className="mt-1 text-xs text-muted-foreground">

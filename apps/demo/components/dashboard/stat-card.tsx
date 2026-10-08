@@ -18,7 +18,7 @@ export function StatCard({ stat }: { stat: Stat }) {
           <span
             className={cn(
               "inline-flex items-center gap-0.5 font-medium",
-              good ? "text-success" : "text-destructive"
+              good ? "text-success-text" : "text-destructive-text"
             )}
           >
             <Arrow className="size-3.5" aria-hidden />

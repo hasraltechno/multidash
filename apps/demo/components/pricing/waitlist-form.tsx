@@ -14,7 +14,7 @@ export function WaitlistForm() {
 
   if (state.status === "success") {
     return (
-      <p role="status" className="flex items-center gap-2 text-sm font-medium text-success">
+      <p role="status" className="flex items-center gap-2 text-sm font-medium text-success-text">
         <CircleCheck className="size-4" aria-hidden />
         You&apos;re on the list! We&apos;ll email you when Pro launches.
       </p>
@@ -49,7 +49,7 @@ export function WaitlistForm() {
         </Button>
       </div>
       {state.status === "error" && (
-        <p id="waitlist-error" role="alert" className="text-sm text-destructive">
+        <p id="waitlist-error" role="alert" className="text-sm text-destructive-text">
           {state.message}
         </p>
       )}

@@ -50,9 +50,11 @@ export const componentDocs: ComponentDoc[] = [
   {
     slug: "button",
     name: "Button",
-    description: "Triggers an action. Six variants, five sizes, and can render as a link.",
+    description: "Triggers an action. Twelve variants — solid, soft, outline, ghost and link — five sizes, and can render as a link.",
     examples: [
       { id: "variants", title: "Variants" },
+      { id: "status", title: "Status colors", description: "Solid success, warning and destructive buttons for confirm and danger actions." },
+      { id: "soft", title: "Soft", description: "A tinted background with colored text — for secondary actions that still carry meaning." },
       { id: "sizes", title: "Sizes" },
       { id: "with-icon", title: "With icon and loading state" },
       { id: "as-link", title: "As a link", description: "Use asChild to apply button styles to another element." },

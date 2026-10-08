@@ -7,7 +7,7 @@ export default function InputStates() {
       <div className="grid gap-2">
         <Label htmlFor="username">Username</Label>
         <Input id="username" defaultValue="jane" aria-invalid aria-describedby="username-error" />
-        <p id="username-error" className="text-xs text-destructive">
+        <p id="username-error" className="text-xs text-destructive-text">
           This username is already taken.
         </p>
       </div>

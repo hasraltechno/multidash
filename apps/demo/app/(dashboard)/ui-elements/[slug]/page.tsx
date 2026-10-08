@@ -87,7 +87,7 @@ export default async function ComponentDocPage({ params }: Props) {
             <p className="text-sm text-muted-foreground">
               Then copy the source into{" "}
               <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">components/ui/{slug}.tsx</code>{" "}
-              (requires the <Link href="/ui-elements#install-heading" className="text-primary underline underline-offset-4">cn() helper and theme tokens</Link>):
+              (requires the <Link href="/ui-elements#install-heading" className="text-primary-text underline underline-offset-4">cn() helper and theme tokens</Link>):
             </p>
             {requiredComponents.length > 0 && (
               <p className="text-sm text-muted-foreground">
@@ -95,7 +95,7 @@ export default async function ComponentDocPage({ params }: Props) {
                 {requiredComponents.map((dep, i) => (
                   <span key={dep.slug}>
                     {i > 0 && ", "}
-                    <Link href={`/ui-elements/${dep.slug}`} className="font-medium text-primary underline underline-offset-4">
+                    <Link href={`/ui-elements/${dep.slug}`} className="font-medium text-primary-text underline underline-offset-4">
                       {dep.name}
                     </Link>
                   </span>

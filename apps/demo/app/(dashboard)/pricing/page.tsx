@@ -65,7 +65,7 @@ export default function PricingPage() {
                 <ul className="space-y-2.5 text-sm">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <Check className="mt-0.5 size-4 shrink-0 text-success" aria-hidden />
+                      <Check className="mt-0.5 size-4 shrink-0 text-success-text" aria-hidden />
                       {f}
                     </li>
                   ))}
@@ -92,7 +92,7 @@ export default function PricingPage() {
       <Card id="waitlist" className="scroll-mt-24 border-primary/30 bg-gradient-to-br from-primary/10 via-card to-card">
         <CardContent className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-1.5">
-            <p className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+            <p className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide text-primary-text uppercase">
               <Sparkles className="size-3.5" aria-hidden /> Coming soon
             </p>
             <h2 className="text-xl font-semibold tracking-tight">Get notified when Multidash Pro launches</h2>
@@ -125,13 +125,13 @@ export default function PricingPage() {
                     <TableCell className="whitespace-normal">{row.feature}</TableCell>
                     <TableCell className="text-center">
                       {row.free ? (
-                        <Check className="mx-auto size-4 text-success" aria-label="Included" />
+                        <Check className="mx-auto size-4 text-success-text" aria-label="Included" />
                       ) : (
                         <Minus className="mx-auto size-4 text-muted-foreground" aria-label="Not included" />
                       )}
                     </TableCell>
                     <TableCell className="text-center">
-                      <Check className="mx-auto size-4 text-success" aria-label="Included" />
+                      <Check className="mx-auto size-4 text-success-text" aria-label="Included" />
                     </TableCell>
                   </TableRow>
                 ))}

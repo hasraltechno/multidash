@@ -33,10 +33,10 @@ export default async function ProFeaturePage({ params }: Props) {
       </div>
 
       <CardContent className="relative flex min-h-[32rem] flex-col items-center justify-center text-center">
-        <div className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+        <div className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary-text">
           <Lock className="size-5" />
         </div>
-        <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+        <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide text-primary-text uppercase">
           <Sparkles className="size-3.5" /> Multidash Pro
         </p>
         <h1 className="mt-2 text-2xl font-semibold tracking-tight">{feature.title}</h1>
@@ -45,7 +45,7 @@ export default async function ProFeaturePage({ params }: Props) {
         <ul className="mt-6 space-y-2 text-left text-sm">
           {feature.highlights.map((h) => (
             <li key={h} className="flex items-center gap-2">
-              <Check className="size-4 text-success" aria-hidden />
+              <Check className="size-4 text-success-text" aria-hidden />
               {h}
             </li>
           ))}

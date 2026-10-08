@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Button variants: `success`, `warning`, `soft`, `soft-success`, `soft-warning` and `soft-destructive`; Badge `soft` variant
 - Component documentation: an overview page plus one page per component with live examples, Preview/Code tabs, copy buttons, dependencies, full source and usage
 - Typography page with heading, paragraph, lead, list, blockquote, inline code and link styles
 - New components: Accordion, Alert, Data Table, Dialog, Popover, Select, Tabs and Toast (Sonner) — 25 free components in total, each with a docs page
@@ -16,7 +17,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Order demo data expanded to 40 rows
 - Five image card examples: article with cover, product, horizontal listing, image overlay and profile with cover
 - Pricing FAQ now uses the Accordion component
-- Darker light-mode `--destructive` and `--warning` tokens so status text meets WCAG AA contrast (4.5:1)
+- Status colors split into three roles — `--x` (fills, solid backgrounds), `--x-foreground` (text on solid) and `--x-text` (colored text on the page or a soft tint) — plus `--primary-text`. Fills stay bright (e.g. yellow rating stars) while every text pairing meets WCAG AA 4.5:1 in both themes
+- Dark-mode primary and destructive buttons now meet 4.5:1 with white text
 - Pricing page with plan cards, feature comparison and FAQ
 - Pro waitlist form backed by Resend or any JSON webhook, with validation and spam protection
 - Vercel Web Analytics

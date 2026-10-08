@@ -90,7 +90,15 @@ multidash/
 
 Set your own domain in [`apps/demo/lib/site.ts`](apps/demo/lib/site.ts) (`productionUrl`) or via the `NEXT_PUBLIC_SITE_URL` environment variable — it is used for Open Graph and canonical URLs.
 
-All colors live in [`packages/ui/src/styles/globals.css`](packages/ui/src/styles/globals.css). Change `--primary` to rebrand; chart colors (`--chart-1` … `--chart-5`) are a validated colorblind-safe order — keep the order if you swap hues.
+All colors live in [`packages/ui/src/styles/globals.css`](packages/ui/src/styles/globals.css). Change `--primary` (and `--primary-text`) to rebrand; chart colors (`--chart-1` … `--chart-5`) are a validated colorblind-safe order — keep the order if you swap hues.
+
+Status colors (`success`, `warning`, `destructive`) each have three roles, so bright fills never compromise text contrast:
+
+| Token | Use for | Example |
+| --- | --- | --- |
+| `--success` | Fills and solid backgrounds | `bg-success`, `fill-warning` |
+| `--success-foreground` | Text on a solid background | `text-success-foreground` |
+| `--success-text` | Colored text on the page or a soft tint | `text-success-text` |
 
 Use a component anywhere in the app:
 

@@ -13,7 +13,7 @@ export default function AvatarBasic() {
         <AvatarFallback>LJ</AvatarFallback>
       </Avatar>
       <Avatar className="size-10">
-        <AvatarFallback className="bg-primary/15 text-primary">JD</AvatarFallback>
+        <AvatarFallback className="bg-primary/15 text-primary-text">JD</AvatarFallback>
       </Avatar>
     </div>
   )

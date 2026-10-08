@@ -19,7 +19,7 @@ export function UserNav() {
         aria-label="Account menu"
       >
         <Avatar className="size-8">
-          <AvatarFallback className="bg-primary/15 text-primary">JD</AvatarFallback>
+          <AvatarFallback className="bg-primary/15 text-primary-text">JD</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">

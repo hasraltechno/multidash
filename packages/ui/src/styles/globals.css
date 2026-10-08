@@ -20,8 +20,9 @@
   --card-foreground: oklch(0.18 0.01 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.01 260);
-  --primary: oklch(0.56 0.16 254);
+  --primary: oklch(0.55 0.16 254);
   --primary-foreground: oklch(0.985 0 0);
+  --primary-text: oklch(0.5 0.16 254);
   --secondary: oklch(0.96 0.005 250);
   --secondary-foreground: oklch(0.22 0.01 260);
   --muted: oklch(0.96 0.005 250);
@@ -29,12 +30,24 @@
   --accent: oklch(0.95 0.01 250);
   --accent-foreground: oklch(0.22 0.01 260);
   --destructive: oklch(0.54 0.2 25);
+  --destructive-foreground: oklch(0.985 0 0);
+  --destructive-text: oklch(0.52 0.2 25);
   --border: oklch(0.92 0.006 250);
   --input: oklch(0.9 0.008 250);
-  --ring: oklch(0.56 0.16 254);
+  --ring: oklch(0.55 0.16 254);
 
-  --success: oklch(0.45 0.13 145);
-  --warning: oklch(0.5 0.12 65);
+  /*
+   * Status colors come in three roles:
+   *   --x             fills and solid backgrounds (icons, stars, progress, solid buttons)
+   *   --x-foreground  text on a solid --x background
+   *   --x-text        colored text/icons on the page or a soft --x tint (WCAG AA 4.5:1)
+   */
+  --success: oklch(0.53 0.15 150);
+  --success-foreground: oklch(0.985 0 0);
+  --success-text: oklch(0.45 0.13 145);
+  --warning: oklch(0.8 0.16 82);
+  --warning-foreground: oklch(0.3 0.07 60);
+  --warning-text: oklch(0.5 0.12 65);
 
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.3 0.01 260);
@@ -59,21 +72,28 @@
   --card-foreground: oklch(0.97 0 0);
   --popover: oklch(0.2 0.005 260);
   --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.63 0.16 254);
+  --primary: oklch(0.55 0.17 256);
   --primary-foreground: oklch(0.985 0 0);
+  --primary-text: oklch(0.74 0.14 254);
   --secondary: oklch(0.26 0.006 260);
   --secondary-foreground: oklch(0.97 0 0);
   --muted: oklch(0.26 0.006 260);
   --muted-foreground: oklch(0.71 0.01 260);
   --accent: oklch(0.27 0.008 260);
   --accent-foreground: oklch(0.97 0 0);
-  --destructive: oklch(0.65 0.19 25);
+  --destructive: oklch(0.56 0.2 25);
+  --destructive-foreground: oklch(0.985 0 0);
+  --destructive-text: oklch(0.72 0.17 25);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 14%);
   --ring: oklch(0.63 0.16 254);
 
-  --success: oklch(0.68 0.17 145);
-  --warning: oklch(0.78 0.14 75);
+  --success: oklch(0.68 0.16 150);
+  --success-foreground: oklch(0.2 0.04 150);
+  --success-text: oklch(0.74 0.17 148);
+  --warning: oklch(0.8 0.15 80);
+  --warning-foreground: oklch(0.25 0.06 60);
+  --warning-text: oklch(0.82 0.14 82);
 
   --sidebar: oklch(0.18 0.005 260);
   --sidebar-foreground: oklch(0.85 0.005 260);
@@ -107,6 +127,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-text: var(--primary-text);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -114,11 +135,17 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-text: var(--destructive-text);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-text: var(--success-text);
   --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-text: var(--warning-text);
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
