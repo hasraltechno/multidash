@@ -39,6 +39,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- Dashboard content is fluid (no max width), so it fills the space when the sidebar is minimized and lines up with the header on any screen; docs and typography pages keep a readable max width
 - Lighter icon strokes (1.5 instead of Lucide's default 2) across the app
 - Buttons and other clickable controls show a pointer cursor again (Tailwind v4 defaults buttons to `cursor: default`); disabled buttons keep the default cursor
 - Single-series charts (revenue area, traffic sources) use `--primary` and follow the customizer; the multi-series chart palette starts with Tailwind blue (validated colorblind-safe in both themes)
