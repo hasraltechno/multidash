@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- Primary color now uses the Tailwind CSS blue scale — blue-600 for fills and buttons, blue-700 (light) / blue-400 (dark) for text — across the UI, app icon, manifest and Open Graph image
 - UI Elements is a collapsible sidebar sub-menu listing every component; it opens automatically inside the section and scrolls the current page into view. The index page becomes an Introduction with installation steps
 - "Get Pro" buttons now link to the pricing page
 

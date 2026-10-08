@@ -20,9 +20,10 @@
   --card-foreground: oklch(0.18 0.01 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.01 260);
-  --primary: oklch(0.55 0.16 254);
+  /* Primary uses the Tailwind CSS blue scale: 600 for fills, 700 for text. */
+  --primary: oklch(0.546 0.245 262.881); /* blue-600 */
   --primary-foreground: oklch(0.985 0 0);
-  --primary-text: oklch(0.5 0.16 254);
+  --primary-text: oklch(0.488 0.243 264.376); /* blue-700 */
   --secondary: oklch(0.96 0.005 250);
   --secondary-foreground: oklch(0.22 0.01 260);
   --muted: oklch(0.96 0.005 250);
@@ -34,7 +35,7 @@
   --destructive-text: oklch(0.52 0.2 25);
   --border: oklch(0.92 0.006 250);
   --input: oklch(0.9 0.008 250);
-  --ring: oklch(0.55 0.16 254);
+  --ring: oklch(0.546 0.245 262.881);
 
   /*
    * Status colors come in three roles:
@@ -72,9 +73,9 @@
   --card-foreground: oklch(0.97 0 0);
   --popover: oklch(0.2 0.005 260);
   --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.55 0.17 256);
+  --primary: oklch(0.546 0.245 262.881); /* blue-600 */
   --primary-foreground: oklch(0.985 0 0);
-  --primary-text: oklch(0.74 0.14 254);
+  --primary-text: oklch(0.707 0.165 254.624); /* blue-400 */
   --secondary: oklch(0.26 0.006 260);
   --secondary-foreground: oklch(0.97 0 0);
   --muted: oklch(0.26 0.006 260);
@@ -86,7 +87,7 @@
   --destructive-text: oklch(0.72 0.17 25);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.63 0.16 254);
+  --ring: oklch(0.623 0.214 259.815); /* blue-500 */
 
   --success: oklch(0.68 0.16 150);
   --success-foreground: oklch(0.2 0.04 150);

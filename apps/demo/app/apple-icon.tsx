@@ -19,7 +19,7 @@ export default function AppleIcon() {
           justifyContent: "center",
           gap: 12,
           paddingBottom: 45,
-          background: "#2a78d6",
+          background: "#155dfc",
         }}
       >
         {bar(45)}
