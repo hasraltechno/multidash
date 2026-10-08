@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- Buttons and other clickable controls show a pointer cursor again (Tailwind v4 defaults buttons to `cursor: default`); disabled buttons keep the default cursor
 - Single-series charts (revenue area, traffic sources) use `--primary` and follow the customizer; the multi-series chart palette starts with Tailwind blue (validated colorblind-safe in both themes)
 - Status colors follow a new palette: info (Tailwind sky), success (Tailwind emerald), warning (#F59200 amber) and error (#FF4F1A orange-red), mapped per theme to shades that keep WCAG AA contrast
 - Primary color now uses the Tailwind CSS blue scale — blue-600 for fills and buttons, blue-700 (light) / blue-400 (dark) for text — across the UI, app icon, manifest and Open Graph image
