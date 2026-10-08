@@ -72,7 +72,7 @@ export default function TablesPage() {
                 </Button>
               )}
             </div>
-            <ComponentPreview path={level.path} align="start" className="p-4 sm:p-6" />
+            <ComponentPreview path={level.path} align="start" />
           </section>
         ))}
       </div>

@@ -45,6 +45,7 @@ export default async function ComponentDocPage({ params }: Props) {
   const requiredComponents = getComponentDependencies(source)
     .map((dep) => getComponentDoc(dep))
     .filter((dep) => dep !== undefined)
+  const align = doc.layout === "full" ? "start" : "center"
   const index = componentDocs.indexOf(doc)
   const prev = componentDocs[index - 1]
   const next = componentDocs[index + 1]
@@ -52,7 +53,7 @@ export default async function ComponentDocPage({ params }: Props) {
   const importCode = `import {\n${exports.map((e) => `  ${e},`).join("\n")}\n} from "@multidash/ui/components/${slug}"`
 
   return (
-    <article className="mx-auto w-full max-w-4xl space-y-10">
+    <article className="w-full max-w-6xl space-y-10">
       <header className="space-y-3">
         <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-muted-foreground">
           <Link href="/ui-elements" className="hover:text-foreground">
@@ -68,7 +69,7 @@ export default async function ComponentDocPage({ params }: Props) {
         )}
       </header>
 
-      <ComponentPreview path={`${slug}/${doc.examples[0]!.id}`} />
+      <ComponentPreview path={`${slug}/${doc.examples[0]!.id}`} align={align} />
 
       <Section id="installation" title="Installation">
         <div className="space-y-6">
@@ -130,7 +131,7 @@ export default async function ComponentDocPage({ params }: Props) {
                     <p className="mt-1 text-sm text-muted-foreground">{example.description}</p>
                   )}
                 </div>
-                <ComponentPreview path={`${slug}/${example.id}`} />
+                <ComponentPreview path={`${slug}/${example.id}`} align={align} />
               </div>
             ))}
           </div>

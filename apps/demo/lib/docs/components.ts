@@ -5,6 +5,8 @@ export type ComponentDoc = {
   slug: string
   name: string
   description: string
+  /** "full" for wide components (tables) — previews fill the box instead of centering. */
+  layout?: "centered" | "full"
   examples: { id: string; title: string; description?: string }[]
 }
 
@@ -73,6 +75,7 @@ export const componentDocs: ComponentDoc[] = [
   },
   {
     slug: "data-table",
+    layout: "full",
     name: "Data Table",
     description: "A full-featured table built on TanStack Table v9: search, faceted filters, sorting, column visibility, row selection and pagination.",
     examples: [
@@ -179,6 +182,7 @@ export const componentDocs: ComponentDoc[] = [
   },
   {
     slug: "table",
+    layout: "full",
     name: "Table",
     description: "A responsive table for tabular data.",
     examples: [{ id: "basic", title: "Invoices" }],
