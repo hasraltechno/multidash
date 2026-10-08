@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type { Metadata } from "next"
 import { Lock } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
@@ -15,9 +16,9 @@ export default function TablesPage() {
     <>
       <PageHeader title="Tables" description="Search, filter and paginate tabular data.">
         <Button variant="outline" asChild>
-          <a href={siteConfig.links.pro} target="_blank" rel="noreferrer">
+          <Link href={siteConfig.links.pro}>
             <Lock /> Export CSV (Pro)
-          </a>
+          </Link>
         </Button>
       </PageHeader>
       <Card>

@@ -25,7 +25,6 @@ export const siteConfig = {
   links: {
     demo: productionUrl,
     github: "https://github.com/hasraltechno/multidash",
-    // Replace with your checkout page (Polar.sh, Lemon Squeezy, Gumroad, ...).
-    pro: "https://github.com/hasraltechno/multidash#-multidash-pro",
+    pro: "/pricing",
   },
 }

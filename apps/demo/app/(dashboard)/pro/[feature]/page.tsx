@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { Check, Lock, Sparkles } from "lucide-react"
@@ -52,9 +53,9 @@ export default async function ProFeaturePage({ params }: Props) {
 
         <div className="mt-8 flex flex-wrap justify-center gap-2">
           <Button size="lg" asChild>
-            <a href={siteConfig.links.pro} target="_blank" rel="noreferrer">
+            <Link href={siteConfig.links.pro}>
               Get Multidash Pro
-            </a>
+            </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href={siteConfig.links.github} target="_blank" rel="noreferrer">

@@ -73,9 +73,9 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
             5 dashboards, 6 apps, auth, database & payments.
           </p>
           <Button asChild size="sm" className="mt-3 w-full">
-            <a href={siteConfig.links.pro} target="_blank" rel="noreferrer">
+            <Link href={siteConfig.links.pro} onClick={onNavigate}>
               Get Pro
-            </a>
+            </Link>
           </Button>
         </div>
       </div>
