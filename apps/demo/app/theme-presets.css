@@ -6,7 +6,7 @@
  *   data-primary  indigo | purple | green | amber | rose   (blue = default, no attribute)
  *   data-light    slate | neutral                          (gray = default)
  *   data-dark     navy | zinc | black | mint               (default = no attribute)
- *   data-card     bordered | shadow                        (default = no attribute)
+ *   data-card     bordered | shadow — cards, sidebar and header (default = no attribute)
  *   data-radius   0 | sm | lg | xl                         (md = default)
  *   data-mono     present = monochrome
  */
@@ -176,6 +176,35 @@ html.dark[data-card="shadow"] [data-slot="card"][data-variant="default"] {
     0 10px 15px -3px rgb(0 0 0 / 0.4),
     0 4px 6px -4px rgb(0 0 0 / 0.4),
     0 0 0 1px rgb(255 255 255 / 0.1);
+}
+
+/* The sidebar and header follow the card style too, so surfaces read as one system. */
+html[data-card="bordered"] [data-sidebar-panel],
+html[data-card="bordered"] [data-slot="site-header"] {
+  border-color: var(--input);
+}
+
+html[data-card="shadow"] [data-sidebar-panel] {
+  border-right-color: transparent;
+  box-shadow:
+    1px 0 2px rgb(0 0 0 / 0.04),
+    6px 0 16px -6px rgb(0 0 0 / 0.08);
+}
+html[data-card="shadow"] [data-slot="site-header"] {
+  border-bottom-color: transparent;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.04),
+    0 6px 16px -8px rgb(0 0 0 / 0.08);
+}
+html.dark[data-card="shadow"] [data-sidebar-panel] {
+  box-shadow:
+    1px 0 0 rgb(255 255 255 / 0.06),
+    6px 0 16px -6px rgb(0 0 0 / 0.5);
+}
+html.dark[data-card="shadow"] [data-slot="site-header"] {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.06),
+    0 6px 16px -8px rgb(0 0 0 / 0.5);
 }
 
 /* ---------- Radius ---------- */

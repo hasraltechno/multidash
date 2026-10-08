@@ -6,7 +6,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="flex min-h-svh">
       <aside
         data-sidebar-panel
-        className="sticky top-0 hidden h-svh w-64 shrink-0 border-r bg-sidebar transition-[width] duration-200 ease-out motion-reduce:transition-none lg:block collapsed:w-16"
+        className="sticky top-0 z-40 hidden h-svh w-64 shrink-0 border-r bg-sidebar transition-[width] duration-200 ease-out motion-reduce:transition-none lg:block collapsed:w-16"
       >
         <SidebarNav variant="desktop" />
       </aside>

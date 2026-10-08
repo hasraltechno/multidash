@@ -210,7 +210,7 @@ export function ThemeCustomizer() {
             />
           </Section>
 
-          <Section title="Card style">
+          <Section title="Card & layout style">
             <OptionGroup
               name="card"
               value={settings.card}
