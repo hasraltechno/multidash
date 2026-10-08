@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Tables page now shows three levels — basic, standard and advanced — each with Preview/Code
 - Dropdown Menu checkbox items and an indeterminate Checkbox state
 - Order demo data expanded to 40 rows
+- Five image card examples: article with cover, product, horizontal listing, image overlay and profile with cover
 - Pricing FAQ now uses the Accordion component
 - Darker light-mode `--destructive` and `--warning` tokens so status text meets WCAG AA contrast (4.5:1)
 - Pricing page with plan cards, feature comparison and FAQ

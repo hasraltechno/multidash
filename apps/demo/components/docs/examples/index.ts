@@ -14,6 +14,11 @@ import ButtonSizes from "./button/sizes"
 import ButtonVariants from "./button/variants"
 import ButtonWithIcon from "./button/with-icon"
 import CardBasic from "./card/basic"
+import CardHorizontal from "./card/horizontal"
+import CardImageOverlay from "./card/image-overlay"
+import CardImageTop from "./card/image-top"
+import CardProduct from "./card/product"
+import CardProfile from "./card/profile"
 import CardWithAction from "./card/with-action"
 import CheckboxBasic from "./checkbox/basic"
 import DataTableAdvanced from "./data-table/advanced"
@@ -72,6 +77,11 @@ export const examples: Record<string, ComponentType> = {
   "button/variants": ButtonVariants,
   "button/with-icon": ButtonWithIcon,
   "card/basic": CardBasic,
+  "card/horizontal": CardHorizontal,
+  "card/image-overlay": CardImageOverlay,
+  "card/image-top": CardImageTop,
+  "card/product": CardProduct,
+  "card/profile": CardProfile,
   "card/with-action": CardWithAction,
   "checkbox/basic": CheckboxBasic,
   "data-table/advanced": DataTableAdvanced,

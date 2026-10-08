@@ -61,10 +61,15 @@ export const componentDocs: ComponentDoc[] = [
   {
     slug: "card",
     name: "Card",
-    description: "A container that groups related content and actions.",
+    description: "A container that groups related content and actions — from simple panels to image-rich product, article and profile cards.",
     examples: [
       { id: "basic", title: "Header, content and footer" },
       { id: "with-action", title: "With header action" },
+      { id: "image-top", title: "Article with cover image", description: "Remove the top padding with pt-0 and let the image bleed to the edges with overflow-hidden." },
+      { id: "product", title: "Product", description: "Badge and wishlist button positioned over the image." },
+      { id: "horizontal", title: "Horizontal", description: "Image beside the content from the sm breakpoint; stacked on mobile." },
+      { id: "image-overlay", title: "Image overlay", description: "A gradient keeps text readable on top of any photo." },
+      { id: "profile", title: "Profile with cover", description: "A negative margin pulls the avatar up over the cover image." },
     ],
   },
   {
