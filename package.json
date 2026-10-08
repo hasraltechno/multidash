@@ -1,0 +1,21 @@
+{
+  "name": "multidash",
+  "private": true,
+  "description": "Free & open-source admin dashboard template built with Next.js, React and Tailwind CSS.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.7",
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "pnpm@12.10.1",
+  "engines": {
+    "node": ">=20"
+  }
+}
