@@ -22,3 +22,6 @@ next-env.d.ts
 *.log
 .vercel
 coverage
+
+# internal planning docs (never pushed)
+docs/internal/
