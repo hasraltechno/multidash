@@ -25,7 +25,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 - 🎨 **Tailwind CSS v4** with a single token file for rebranding
 - 🌗 **Light / dark / system** theme
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
-- 🧩 **18 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
+- 🧩 **24 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
 - 📱 **Fully responsive** — mobile sidebar drawer
 - ♿ **Accessible** — keyboard navigation, ARIA labels, reduced-motion support
 - 📦 **Turborepo monorepo** — share the UI package across apps

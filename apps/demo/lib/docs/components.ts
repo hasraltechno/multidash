@@ -10,6 +10,24 @@ export type ComponentDoc = {
 
 export const componentDocs: ComponentDoc[] = [
   {
+    slug: "accordion",
+    name: "Accordion",
+    description: "Vertically stacked sections that expand to reveal content.",
+    examples: [
+      { id: "basic", title: "Single", description: "Only one section open at a time; collapsible lets it close fully." },
+      { id: "multiple", title: "Multiple open" },
+    ],
+  },
+  {
+    slug: "alert",
+    name: "Alert",
+    description: "A callout that draws attention to important information.",
+    examples: [
+      { id: "basic", title: "Default" },
+      { id: "variants", title: "Variants", description: "Always pair the color with an icon and a clear title." },
+    ],
+  },
+  {
     slug: "avatar",
     name: "Avatar",
     description: "An image element with a fallback for representing a user.",
@@ -54,6 +72,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [{ id: "basic", title: "With label" }],
   },
   {
+    slug: "dialog",
+    name: "Dialog",
+    description: "A modal window that focuses the user on a single task.",
+    examples: [
+      { id: "basic", title: "Form dialog" },
+      { id: "confirm", title: "Confirmation", description: "Hide the close button so the user makes an explicit choice." },
+    ],
+  },
+  {
     slug: "dropdown-menu",
     name: "Dropdown Menu",
     description: "A menu of actions or options, opened by a button.",
@@ -85,12 +112,30 @@ export const componentDocs: ComponentDoc[] = [
     examples: [{ id: "basic", title: "Basic" }],
   },
   {
+    slug: "popover",
+    name: "Popover",
+    description: "Rich content in a floating panel, anchored to a trigger.",
+    examples: [
+      { id: "basic", title: "Settings form" },
+      { id: "share", title: "Share link" },
+    ],
+  },
+  {
     slug: "progress",
     name: "Progress",
     description: "Shows how far a task has progressed.",
     examples: [
       { id: "basic", title: "With label" },
       { id: "custom-color", title: "Custom colors" },
+    ],
+  },
+  {
+    slug: "select",
+    name: "Select",
+    description: "A custom dropdown for choosing one option from a list.",
+    examples: [
+      { id: "basic", title: "With label" },
+      { id: "groups", title: "Groups and separators" },
     ],
   },
   {
@@ -140,6 +185,15 @@ export const componentDocs: ComponentDoc[] = [
     name: "Textarea",
     description: "A multi-line text field that grows with its content.",
     examples: [{ id: "basic", title: "With label" }],
+  },
+  {
+    slug: "toast",
+    name: "Toast",
+    description: "Brief, non-blocking notifications. Powered by Sonner.",
+    examples: [
+      { id: "basic", title: "Basic", description: "Mount <Toaster /> once in your root layout, then call toast() anywhere." },
+      { id: "types", title: "Types, actions and promises" },
+    ],
   },
   {
     slug: "tooltip",

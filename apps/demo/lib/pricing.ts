@@ -26,7 +26,7 @@ export const plans: Plan[] = [
     features: [
       "Overview dashboard",
       "Tables, forms & auth pages",
-      "18 UI components with docs",
+      "24 UI components with docs",
       "Light & dark mode",
       "Community support",
     ],

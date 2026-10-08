@@ -1,5 +1,11 @@
 import type { Metadata } from "next"
 import { Check, Minus, Sparkles } from "lucide-react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@multidash/ui/components/accordion"
 import { Badge } from "@multidash/ui/components/badge"
 import { Button } from "@multidash/ui/components/button"
 import {
@@ -139,18 +145,15 @@ export default function PricingPage() {
             <CardTitle>FAQ</CardTitle>
             <CardDescription>Common questions about licenses.</CardDescription>
           </CardHeader>
-          <CardContent className="divide-y">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group py-3 first:pt-0 last:pb-0">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium [&::-webkit-details-marker]:hidden">
-                  {faq.question}
-                  <span aria-hidden className="text-muted-foreground transition-transform group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-2 text-sm text-muted-foreground">{faq.answer}</p>
-              </details>
-            ))}
+          <CardContent>
+            <Accordion type="single" collapsible>
+              {faqs.map((faq) => (
+                <AccordionItem key={faq.question} value={faq.question}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </CardContent>
         </Card>
       </section>
