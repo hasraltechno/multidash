@@ -53,6 +53,10 @@
   --warning: #f59200;
   --warning-foreground: oklch(0.3 0.07 60);
   --warning-text: #964e00;
+  /* Highlight: a magenta brand accent, separate from the neutral --secondary. */
+  --highlight: #b8008c;
+  --highlight-foreground: oklch(0.985 0 0);
+  --highlight-text: #a3007b;
 
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.3 0.01 260);
@@ -102,6 +106,9 @@
   --warning: #f59200;
   --warning-foreground: oklch(0.25 0.06 60);
   --warning-text: #ffba42;
+  --highlight: #ff2ecf;
+  --highlight-foreground: oklch(0.2 0.03 330);
+  --highlight-text: #ff75df;
 
   --sidebar: oklch(0.18 0.005 260);
   --sidebar-foreground: oklch(0.85 0.005 260);
@@ -157,6 +164,9 @@
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
   --color-warning-text: var(--warning-text);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-highlight-text: var(--highlight-text);
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);

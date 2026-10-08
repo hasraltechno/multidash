@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Highlight color (magenta, `--highlight` / `-foreground` / `-text`) kept separate from the neutral secondary, with Button `highlight` / `soft-highlight` and Badge `highlight`
 - Info color (`--info`, `--info-foreground`, `--info-text`) with Button `info` / `soft-info`, Badge `info` and Alert `info` variants
 - Button variants: `success`, `warning`, `soft`, `soft-success`, `soft-warning` and `soft-destructive`; Badge `soft` variant
 - Component documentation: an overview page plus one page per component with live examples, Preview/Code tabs, copy buttons, dependencies, full source and usage

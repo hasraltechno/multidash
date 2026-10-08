@@ -1,4 +1,4 @@
-import { CircleCheck, Info, TriangleAlert, Trash2 } from "lucide-react"
+import { CircleCheck, Info, Sparkles, TriangleAlert, Trash2 } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
 
 export default function ButtonStatus() {
@@ -12,6 +12,9 @@ export default function ButtonStatus() {
       </Button>
       <Button variant="warning">
         <TriangleAlert /> Review
+      </Button>
+      <Button variant="highlight">
+        <Sparkles /> Upgrade
       </Button>
       <Button variant="destructive">
         <Trash2 /> Delete

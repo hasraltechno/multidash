@@ -1,4 +1,4 @@
-import { CircleCheck, Info, Plus, TriangleAlert, Trash2 } from "lucide-react"
+import { CircleCheck, Info, Plus, Sparkles, TriangleAlert, Trash2 } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
 
 // Soft variants: a light tint of the color with colored text — less emphasis than solid buttons.
@@ -16,6 +16,9 @@ export default function ButtonSoft() {
       </Button>
       <Button variant="soft-warning">
         <TriangleAlert /> Needs review
+      </Button>
+      <Button variant="soft-highlight">
+        <Sparkles /> New
       </Button>
       <Button variant="soft-destructive">
         <Trash2 /> Remove

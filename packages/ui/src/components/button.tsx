@@ -20,10 +20,12 @@ const buttonVariants = cva(
         info: "bg-info text-info-foreground shadow-xs hover:bg-info/90",
         success: "bg-success text-success-foreground shadow-xs hover:bg-success/90",
         warning: "bg-warning text-warning-foreground shadow-xs hover:bg-warning/90",
+        highlight: "bg-highlight text-highlight-foreground shadow-xs hover:bg-highlight/90",
         soft: "bg-primary/12 text-primary-text hover:bg-primary/18",
         "soft-info": "bg-info/12 text-info-text hover:bg-info/18",
         "soft-success": "bg-success/12 text-success-text hover:bg-success/18",
         "soft-warning": "bg-warning/18 text-warning-text hover:bg-warning/25",
+        "soft-highlight": "bg-highlight/12 text-highlight-text hover:bg-highlight/18",
         "soft-destructive": "bg-destructive/10 text-destructive-text hover:bg-destructive/15",
       },
       size: {

@@ -11,6 +11,7 @@ export default function BadgeVariants() {
       <Badge variant="success">Success</Badge>
       <Badge variant="warning">Warning</Badge>
       <Badge variant="destructive">Destructive</Badge>
+      <Badge variant="highlight">Highlight</Badge>
     </div>
   )
 }
