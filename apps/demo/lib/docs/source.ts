@@ -14,12 +14,20 @@ export async function readExampleSource(path: string) {
 /** Component source as a user would paste it into their own project. */
 export async function readComponentSource(slug: string) {
   const source = await readFile(join(uiDir, `${slug}.tsx`), "utf8")
-  return source.replaceAll('from "../lib/utils"', 'from "@/lib/utils"').trim()
+  return source
+    .replaceAll('from "../lib/utils"', 'from "@/lib/utils"')
+    .replace(/from "\.\/([\w-]+)"/g, 'from "@/components/ui/$1"')
+    .trim()
 }
 
 export function getExports(source: string): string[] {
   const match = source.match(/export\s*\{([^}]+)\}/)
   return match?.[1]?.split(",").map((s) => s.trim()).filter(Boolean) ?? []
+}
+
+/** Other Multidash components a component builds on (slugs). */
+export function getComponentDependencies(source: string): string[] {
+  return [...source.matchAll(/from "@\/components\/ui\/([\w-]+)"/g)].map((m) => m[1]!).sort()
 }
 
 /** npm packages imported by a component (plus the cn() helper's dependencies). */

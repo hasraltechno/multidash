@@ -26,7 +26,7 @@ export const plans: Plan[] = [
     features: [
       "Overview dashboard",
       "Tables, forms & auth pages",
-      "24 UI components with docs",
+      "25 UI components with docs",
       "Light & dark mode",
       "Community support",
     ],
@@ -68,7 +68,8 @@ export const comparison: { feature: string; free: boolean }[] = [
   { feature: "Database layer (Drizzle ORM)", free: false },
   { feature: "Payments — Stripe, Midtrans & Xendit", free: false },
   { feature: "i18n (English, Bahasa Indonesia)", free: false },
-  { feature: "Advanced data tables with CSV/Excel export", free: false },
+  { feature: "Data tables: sorting, filters, selection (TanStack)", free: true },
+  { feature: "Data table CSV/Excel export & server-side pagination", free: false },
 ]
 
 export const faqs: { question: string; answer: string }[] = [

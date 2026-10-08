@@ -25,7 +25,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 - 🎨 **Tailwind CSS v4** with a single token file for rebranding
 - 🌗 **Light / dark / system** theme
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
-- 🧩 **24 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
+- 🧩 **25 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
 - 📱 **Fully responsive** — mobile sidebar drawer
 - ♿ **Accessible** — keyboard navigation, ARIA labels, reduced-motion support
 - 📦 **Turborepo monorepo** — share the UI package across apps
@@ -35,7 +35,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 | Page | Description |
 | --- | --- |
 | Overview | KPI cards, revenue area chart, orders bar chart, recent orders, traffic sources |
-| Tables | Search, status filter and pagination |
+| Tables | Basic, standard and advanced (TanStack Table) tables with sorting, faceted filters, column visibility, selection and pagination |
 | Forms | Profile and notification settings layouts |
 | UI Elements | Docs for every component: live examples, source code and installation steps |
 | Typography | Heading, paragraph, list, quote and code styles with copyable classes |
@@ -114,7 +114,8 @@ Need more? **Multidash Pro** builds on this free version with everything you nee
 | Database layer (Drizzle ORM) | — | ✅ |
 | Payments — Stripe, Midtrans & Xendit | — | ✅ |
 | i18n (English, Bahasa Indonesia) | — | ✅ |
-| Advanced data tables with CSV/Excel export | — | ✅ |
+| Data tables with sorting, filters & selection | ✅ | ✅ |
+| Data table CSV/Excel export & server-side pagination | — | ✅ |
 | Figma file & priority support | — | ✅ |
 
 👉 **[See pricing & join the waitlist](https://multidash-app.vercel.app/pricing)**

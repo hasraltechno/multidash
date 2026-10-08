@@ -60,7 +60,7 @@ export type Order = {
   status: OrderStatus
 }
 
-export const orders: Order[] = [
+const recentOrders: Order[] = [
   { id: "INV-1048", customer: "Olivia Martin", email: "olivia@example.com", product: "Pro License", date: "2026-10-07", amount: 249, status: "paid" },
   { id: "INV-1047", customer: "Jackson Lee", email: "jackson@example.com", product: "Team License", date: "2026-10-07", amount: 129, status: "pending" },
   { id: "INV-1046", customer: "Isabella Nguyen", email: "isabella@example.com", product: "Personal License", date: "2026-10-06", amount: 49, status: "paid" },
@@ -74,6 +74,39 @@ export const orders: Order[] = [
   { id: "INV-1038", customer: "Noah Brown", email: "noah@example.com", product: "Team License", date: "2026-10-02", amount: 129, status: "paid" },
   { id: "INV-1037", customer: "Mia Garcia", email: "mia@example.com", product: "Personal License", date: "2026-10-01", amount: 49, status: "refunded" },
 ]
+
+const customers = [
+  ["Ethan Clark", "ethan"], ["Dewi Anggraini", "dewi"], ["Lucas Silva", "lucas"], ["Hana Sato", "hana"],
+  ["Arjun Mehta", "arjun"], ["Chloe Martin", "chloe"], ["Fajar Nugroho", "fajar"], ["Grace Lee", "grace"],
+  ["Mateo Rossi", "mateo"], ["Siti Rahma", "siti"], ["Oliver Wright", "oliver"], ["Nadia Putri", "nadia"],
+  ["Daniel Park", "daniel"], ["Ava Thompson", "ava"],
+] as const
+
+const products = [
+  ["Personal License", 49],
+  ["Team License", 129],
+  ["Pro License", 249],
+] as const
+
+const statuses: OrderStatus[] = ["paid", "paid", "paid", "pending", "paid", "refunded", "paid", "failed"]
+
+// Deterministic older orders so sorting and pagination have something to work with.
+const olderOrders: Order[] = Array.from({ length: 28 }, (_, i) => {
+  const [customer, handle] = customers[i % customers.length]!
+  const [product, amount] = products[(i * 7) % products.length]!
+  const day = 30 - Math.floor(i / 2)
+  return {
+    id: `INV-${1036 - i}`,
+    customer,
+    email: `${handle}@example.com`,
+    product,
+    date: `2026-09-${String(day).padStart(2, "0")}`,
+    amount,
+    status: statuses[(i * 5) % statuses.length]!,
+  }
+})
+
+export const orders: Order[] = [...recentOrders, ...olderOrders]
 
 export const topProducts = [
   { name: "Pro License", sales: 412, revenue: 102588 },

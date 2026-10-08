@@ -16,6 +16,8 @@ import ButtonWithIcon from "./button/with-icon"
 import CardBasic from "./card/basic"
 import CardWithAction from "./card/with-action"
 import CheckboxBasic from "./checkbox/basic"
+import DataTableAdvanced from "./data-table/advanced"
+import DataTableBasic from "./data-table/basic"
 import DialogBasic from "./dialog/basic"
 import DialogConfirm from "./dialog/confirm"
 import DropdownMenuBasic from "./dropdown-menu/basic"
@@ -38,6 +40,7 @@ import SkeletonBasic from "./skeleton/basic"
 import SkeletonCard from "./skeleton/card"
 import SwitchBasic from "./switch/basic"
 import TableBasic from "./table/basic"
+import TablesStandard from "./tables/standard"
 import TabsBasic from "./tabs/basic"
 import TextareaBasic from "./textarea/basic"
 import ToastBasic from "./toast/basic"
@@ -71,6 +74,8 @@ export const examples: Record<string, ComponentType> = {
   "card/basic": CardBasic,
   "card/with-action": CardWithAction,
   "checkbox/basic": CheckboxBasic,
+  "data-table/advanced": DataTableAdvanced,
+  "data-table/basic": DataTableBasic,
   "dialog/basic": DialogBasic,
   "dialog/confirm": DialogConfirm,
   "dropdown-menu/basic": DropdownMenuBasic,
@@ -93,6 +98,7 @@ export const examples: Record<string, ComponentType> = {
   "skeleton/card": SkeletonCard,
   "switch/basic": SwitchBasic,
   "table/basic": TableBasic,
+  "tables/standard": TablesStandard,
   "tabs/basic": TabsBasic,
   "textarea/basic": TextareaBasic,
   "toast/basic": ToastBasic,

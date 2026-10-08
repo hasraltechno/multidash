@@ -9,7 +9,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Component documentation: an overview page plus one page per component with live examples, Preview/Code tabs, copy buttons, dependencies, full source and usage
 - Typography page with heading, paragraph, lead, list, blockquote, inline code and link styles
-- New components: Accordion, Alert, Dialog, Popover, Select, Tabs and Toast (Sonner) — 24 free components in total, each with a docs page
+- New components: Accordion, Alert, Data Table, Dialog, Popover, Select, Tabs and Toast (Sonner) — 25 free components in total, each with a docs page
+- Data Table built on TanStack Table v9: global search, faceted filters, sortable headers, column visibility, row selection with bulk actions, row actions and page sizes
+- Tables page now shows three levels — basic, standard and advanced — each with Preview/Code
+- Dropdown Menu checkbox items and an indeterminate Checkbox state
+- Order demo data expanded to 40 rows
 - Pricing FAQ now uses the Accordion component
 - Darker light-mode `--destructive` and `--warning` tokens so status text meets WCAG AA contrast (4.5:1)
 - Pricing page with plan cards, feature comparison and FAQ

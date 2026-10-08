@@ -72,6 +72,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [{ id: "basic", title: "With label" }],
   },
   {
+    slug: "data-table",
+    name: "Data Table",
+    description: "A full-featured table built on TanStack Table v9: search, faceted filters, sorting, column visibility, row selection and pagination.",
+    examples: [
+      { id: "basic", title: "Sorting and search", description: "Define columns with createDataTableColumnHelper and pass your data." },
+      { id: "advanced", title: "Filters, selection and actions", description: "Faceted filters need filterFn: \"oneOf\" on the column. The toolbar prop receives the table for bulk actions." },
+    ],
+  },
+  {
     slug: "dialog",
     name: "Dialog",
     description: "A modal window that focuses the user on a single task.",

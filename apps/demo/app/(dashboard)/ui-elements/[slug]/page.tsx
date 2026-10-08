@@ -8,7 +8,7 @@ import { Button } from "@multidash/ui/components/button"
 import { CodeBlock } from "@/components/docs/code-block"
 import { ComponentPreview } from "@/components/docs/component-preview"
 import { componentDocs, getComponentDoc } from "@/lib/docs/components"
-import { getDependencies, getExports, readComponentSource } from "@/lib/docs/source"
+import { getComponentDependencies, getDependencies, getExports, readComponentSource } from "@/lib/docs/source"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -42,6 +42,9 @@ export default async function ComponentDocPage({ params }: Props) {
   const source = await readComponentSource(slug)
   const exports = getExports(source)
   const dependencies = getDependencies(source)
+  const requiredComponents = getComponentDependencies(source)
+    .map((dep) => getComponentDoc(dep))
+    .filter((dep) => dep !== undefined)
   const index = componentDocs.indexOf(doc)
   const prev = componentDocs[index - 1]
   const next = componentDocs[index + 1]
@@ -85,6 +88,20 @@ export default async function ComponentDocPage({ params }: Props) {
               <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">components/ui/{slug}.tsx</code>{" "}
               (requires the <Link href="/ui-elements#install-heading" className="text-primary underline underline-offset-4">cn() helper and theme tokens</Link>):
             </p>
+            {requiredComponents.length > 0 && (
+              <p className="text-sm text-muted-foreground">
+                It also uses these components — copy them first:{" "}
+                {requiredComponents.map((dep, i) => (
+                  <span key={dep.slug}>
+                    {i > 0 && ", "}
+                    <Link href={`/ui-elements/${dep.slug}`} className="font-medium text-primary underline underline-offset-4">
+                      {dep.name}
+                    </Link>
+                  </span>
+                ))}
+                .
+              </p>
+            )}
             <details className="group rounded-lg border">
               <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium [&::-webkit-details-marker]:hidden">
                 Show source ({source.split("\n").length} lines)
