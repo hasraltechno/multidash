@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Info color (`--info`, `--info-foreground`, `--info-text`) with Button `info` / `soft-info`, Badge `info` and Alert `info` variants
 - Button variants: `success`, `warning`, `soft`, `soft-success`, `soft-warning` and `soft-destructive`; Badge `soft` variant
 - Component documentation: an overview page plus one page per component with live examples, Preview/Code tabs, copy buttons, dependencies, full source and usage
 - Typography page with heading, paragraph, lead, list, blockquote, inline code and link styles
@@ -28,6 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- Status colors follow a new palette: info (Tailwind sky), success (Tailwind emerald), warning (#F59200 amber) and error (#FF4F1A orange-red), mapped per theme to shades that keep WCAG AA contrast
 - Primary color now uses the Tailwind CSS blue scale — blue-600 for fills and buttons, blue-700 (light) / blue-400 (dark) for text — across the UI, app icon, manifest and Open Graph image
 - UI Elements is a collapsible sidebar sub-menu listing every component; it opens automatically inside the section and scrolls the current page into view. The index page becomes an Introduction with installation steps
 - "Get Pro" buttons now link to the pricing page

@@ -1,9 +1,14 @@
-import { CircleCheck, CircleX, TriangleAlert } from "lucide-react"
+import { CircleCheck, CircleX, Info, TriangleAlert } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@multidash/ui/components/alert"
 
 export default function AlertVariants() {
   return (
     <div className="grid w-full max-w-lg gap-3">
+      <Alert variant="info">
+        <Info />
+        <AlertTitle>New feature</AlertTitle>
+        <AlertDescription>Data tables now support column visibility.</AlertDescription>
+      </Alert>
       <Alert variant="success">
         <CircleCheck />
         <AlertTitle>Payment received</AlertTitle>
