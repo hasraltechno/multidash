@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { FileText, Search, Shapes } from "lucide-react"
+import { FileText, Search } from "lucide-react"
 import {
   CommandDialog,
   CommandEmpty,
@@ -80,7 +80,7 @@ export function SearchCommand() {
               <CommandGroup key={item.href} heading={item.title}>
                 {item.children!.map((child) => (
                   <CommandItem key={child.href} value={`${item.title} ${child.title}`} onSelect={() => go(child.href)}>
-                    {child.href === item.href ? <FileText /> : <Shapes />} {child.title}
+                    {child.href === item.href ? <FileText /> : <item.icon />} {child.title}
                   </CommandItem>
                 ))}
               </CommandGroup>

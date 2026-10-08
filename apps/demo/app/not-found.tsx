@@ -1,15 +1,31 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+import { ArrowLeft, LifeBuoy, SearchX } from "lucide-react"
 import { Button } from "@multidash/ui/components/button"
+
+import { ErrorPage } from "@/components/error-page"
+import { siteConfig } from "@/lib/site"
+
+export const metadata: Metadata = { title: "Page not found" }
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-4 p-6 text-center">
-      <p className="text-sm font-semibold text-primary-text">404</p>
-      <h1 className="text-3xl font-semibold tracking-tight">Page not found</h1>
-      <p className="text-muted-foreground">Sorry, we couldn&apos;t find the page you&apos;re looking for.</p>
+    <ErrorPage
+      code="404"
+      icon={SearchX}
+      title="Page not found"
+      description="Sorry, we couldn't find the page you're looking for. It may have been moved or deleted."
+    >
       <Button asChild>
-        <Link href="/">Back to dashboard</Link>
+        <Link href="/">
+          <ArrowLeft /> Back to dashboard
+        </Link>
       </Button>
-    </main>
+      <Button variant="outline" asChild>
+        <a href={`${siteConfig.links.github}/issues`} target="_blank" rel="noreferrer">
+          <LifeBuoy /> Report a problem
+        </a>
+      </Button>
+    </ErrorPage>
   )
 }

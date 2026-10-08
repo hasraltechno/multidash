@@ -2,6 +2,7 @@ import {
   BarChart3,
   CalendarDays,
   FormInput,
+  FileWarning,
   KanbanSquare,
   LayoutDashboard,
   LogIn,
@@ -69,6 +70,16 @@ export const navGroups: NavGroup[] = [
       { title: "Pricing", href: "/pricing", icon: Tag },
       { title: "Sign in", href: "/login", icon: LogIn },
       { title: "Sign up", href: "/register", icon: UserPlus },
+      {
+        title: "Error pages",
+        href: "/errors",
+        icon: FileWarning,
+        children: [
+          { title: "404 Not found", href: "/errors/404" },
+          { title: "500 Server error", href: "/errors/500" },
+          { title: "Maintenance", href: "/errors/maintenance" },
+        ],
+      },
     ],
   },
 ]
