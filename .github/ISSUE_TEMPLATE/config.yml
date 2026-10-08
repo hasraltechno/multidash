@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Multidash Pro
+    url: https://multidash-app.vercel.app/pricing
+    about: Plans, licensing and the Pro waitlist
+  - name: Security vulnerability
+    url: https://github.com/hasraltechno/multidash/security/advisories/new
+    about: Please report security issues privately

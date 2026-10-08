@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Pricing page with plan cards, feature comparison and FAQ
+- Pro waitlist form backed by Resend or any JSON webhook, with validation and spam protection
+- Vercel Web Analytics
+- Issue and pull request templates, contributing guide, security policy and `.env.example`
+- README badges and environment variable docs
+
+### Changed
+
+- "Get Pro" buttons now link to the pricing page
+
 ## [0.1.0] - 2026-10-08
 
 First public release.

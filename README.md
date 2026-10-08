@@ -1,5 +1,11 @@
 # Multidash
 
+[![Release](https://img.shields.io/github/v/release/hasraltechno/multidash?color=2a78d6)](https://github.com/hasraltechno/multidash/releases)
+[![License: MIT](https://img.shields.io/github/license/hasraltechno/multidash?color=2a78d6)](LICENSE)
+[![Live demo](https://img.shields.io/badge/demo-live-1baf7a)](https://multidash-app.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+
 **Free & open-source admin dashboard template** built with **Next.js 16**, **React 19**, **Tailwind CSS v4** and **Radix UI**.
 
 Clean, accessible and responsive — with light/dark mode, colorblind-safe charts and a reusable component library you can drop into any Next.js project.
@@ -32,6 +38,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 | Tables | Search, status filter and pagination |
 | Forms | Profile and notification settings layouts |
 | UI Elements | Buttons, badges, avatars, tooltips, progress, skeletons |
+| Pricing | Plan cards, feature comparison, FAQ and a Pro waitlist form |
 | Sign in / Sign up | Authentication page UI |
 
 ## 🚀 Getting started
@@ -52,6 +59,16 @@ Open [http://localhost:3000](http://localhost:3000).
 | `pnpm dev` | Start the dev server |
 | `pnpm build` | Production build |
 | `pnpm typecheck` | Type-check all packages |
+
+### Environment variables
+
+All optional — copy [`apps/demo/.env.example`](apps/demo/.env.example) to `apps/demo/.env.local` to use them.
+
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Public site URL for Open Graph and canonical links |
+| `RESEND_API_KEY`, `RESEND_SEGMENT_ID` | Store waitlist signups as [Resend](https://resend.com) contacts |
+| `WAITLIST_WEBHOOK_URL` | Or send waitlist signups to any JSON webhook |
 
 ## 📁 Project structure
 
@@ -99,11 +116,11 @@ Need more? **Multidash Pro** builds on this free version with everything you nee
 | Advanced data tables with CSV/Excel export | — | ✅ |
 | Figma file & priority support | — | ✅ |
 
-👉 **[Get Multidash Pro](#)** <!-- TODO: checkout link -->
+👉 **[See pricing & join the waitlist](https://multidash-app.vercel.app/pricing)**
 
 ## 🤝 Contributing
 
-Issues and pull requests are welcome. If Multidash saves you time, please consider giving it a ⭐ — it really helps!
+Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). If Multidash saves you time, please consider giving it a ⭐ — it really helps!
 
 ## 📄 License
 

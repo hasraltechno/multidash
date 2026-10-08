@@ -1,0 +1,39 @@
+name: Bug report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a bug! Please search existing issues first.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Multidash version
+      placeholder: "0.1.0"
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS and Node.js version
+      placeholder: "Chrome 140, macOS 15, Node 22"
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or logs
