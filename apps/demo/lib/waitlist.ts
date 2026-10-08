@@ -22,9 +22,13 @@ async function addToResend(email: string, apiKey: string): Promise<boolean> {
       ...(segmentId ? { segments: [{ id: segmentId }] } : {}),
     }),
   })
+  if (res.ok) return true
+
+  const body = await res.text()
   // An address that is already on the list is still a successful signup.
-  if (res.ok || res.status === 409) return true
-  console.error("[waitlist] Resend error", res.status, await res.text())
+  if (/already exists/i.test(body)) return true
+
+  console.error("[waitlist] Resend error", res.status, body)
   return false
 }
 
