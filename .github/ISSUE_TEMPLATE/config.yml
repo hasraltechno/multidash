@@ -1,5 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Questions & help
+    url: https://github.com/hasraltechno/multidash/discussions/categories/q-a
+    about: Ask how to use or customize Multidash
+  - name: Ideas & show and tell
+    url: https://github.com/hasraltechno/multidash/discussions
+    about: Share ideas and what you've built with Multidash
   - name: Multidash Pro
     url: https://multidash-app.vercel.app/pricing
     about: Plans, licensing and the Pro waitlist

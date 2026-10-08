@@ -31,6 +31,10 @@ pnpm build
 - **Accessibility matters.** Interactive elements need keyboard support and labels; status should never rely on color alone.
 - **Update `CHANGELOG.md`** under `[Unreleased]` for user-facing changes.
 
+## Questions
+
+Have a question or an idea? Start a thread in [GitHub Discussions](https://github.com/hasraltechno/multidash/discussions) — issues are reserved for bugs and concrete feature requests.
+
 ## Reporting bugs
 
 Open an issue using the bug report template and include steps to reproduce. For security issues, see [SECURITY.md](SECURITY.md) instead.

@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Vercel Web Analytics
 - Issue and pull request templates, contributing guide, security policy and `.env.example`
 - README badges and environment variable docs
+- GitHub Discussions for questions and ideas, linked from the issue chooser
 
 ### Changed
 
