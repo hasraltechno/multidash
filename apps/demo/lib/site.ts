@@ -12,7 +12,7 @@ export const siteConfig = {
   name: "Multidash",
   title: "Multidash — Free Next.js Admin Dashboard Template",
   description:
-    "Free & open-source admin dashboard template built with Next.js, React and Tailwind CSS.",
+    "Free & open-source admin dashboard template built with Next.js, React, TypeScript and Tailwind CSS.",
   url: resolveSiteUrl(),
   keywords: [
     "Next.js dashboard",
@@ -20,6 +20,7 @@ export const siteConfig = {
     "React admin",
     "Tailwind CSS dashboard",
     "shadcn/ui",
+    "TypeScript dashboard",
     "open source dashboard",
   ],
   links: {

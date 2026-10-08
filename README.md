@@ -5,8 +5,9 @@
 [![Live demo](https://img.shields.io/badge/demo-live-1baf7a)](https://multidash-app.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
-**Free & open-source admin dashboard template** built with **Next.js 16**, **React 19**, **Tailwind CSS v4** and **Radix UI**.
+**Free & open-source admin dashboard template** built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS v4** and **Radix UI**.
 
 Clean, accessible and responsive — with light/dark mode, colorblind-safe charts and a reusable component library you can drop into any Next.js project.
 
@@ -21,7 +22,8 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 
 ## ✨ Features
 
-- ⚡ **Next.js 16 App Router** + React 19 + TypeScript
+- ⚡ **Next.js 16 App Router** + React 19
+- 🔷 **TypeScript** in strict mode — every component, page and helper is fully typed
 - 🎨 **Tailwind CSS v4** with a single token file for rebranding
 - 🌗 **Light / dark / system** theme plus a **theme customizer** — primary color, backgrounds, card style, radius and monochrome
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
