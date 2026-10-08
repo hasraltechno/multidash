@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { CreditCard, LogOut, Settings, User } from "lucide-react"
-import { Avatar, AvatarFallback } from "@multidash/ui/components/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@multidash/ui/components/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,6 +19,8 @@ export function UserNav() {
         aria-label="Account menu"
       >
         <Avatar className="size-8">
+          {/* Sample portrait from randomuser.me — replace with the signed-in user's photo. */}
+          <AvatarImage src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jane Doe" />
           <AvatarFallback className="bg-primary/15 text-primary-text">JD</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>

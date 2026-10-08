@@ -49,11 +49,11 @@ export function SearchCommand() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="hidden h-9 w-full max-w-sm items-center gap-2 rounded-md sm:flex border border-input bg-transparent px-3 text-sm text-muted-foreground shadow-xs transition-colors outline-none hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        className="hidden h-9 w-full max-w-sm items-center gap-2 rounded-md border border-input bg-transparent pr-1.25 pl-3 text-sm sm:flex text-muted-foreground shadow-xs transition-colors outline-none hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
       >
         <Search className="size-4" aria-hidden />
         <span className="flex-1 text-left">Search...</span>
-        <kbd className="hidden rounded border bg-muted px-1.5 font-mono text-[10px] sm:inline">⌘K</kbd>
+        <kbd className="inline-flex h-6 items-center rounded border bg-muted px-1.5 font-mono text-[11px] font-medium">⌘K</kbd>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen} title="Search" description="Jump to a page or component">
         <CommandInput placeholder="Search pages and components..." />
