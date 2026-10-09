@@ -59,7 +59,7 @@ export default function PricingPage() {
               </CardHeader>
               <CardContent className="flex-1 space-y-6">
                 <div>
-                  <p className="text-4xl font-semibold tracking-tight">${plan.price}</p>
+                  <p className="text-4xl font-semibold tracking-tight">{plan.price === null ? "TBA" : `$${plan.price}`}</p>
                   <p className="mt-1 text-xs text-muted-foreground">{plan.billing}</p>
                 </div>
                 <ul className="space-y-2.5 text-sm">

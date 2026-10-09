@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed
+
+- Pro plan prices on the pricing page show "TBA" until Pro launches
+
 ## [0.2.0] - 2026-10-09
 
 `@multidash/ui` now has 35 components (up from 17), each with its own docs page.

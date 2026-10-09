@@ -5,7 +5,8 @@ import { componentDocs } from "@/lib/docs/components"
 export type Plan = {
   id: string
   name: string
-  price: number
+  /** null until Pro launches — the card shows "TBA" instead of a price. */
+  price: number | null
   /** Shown under the price, e.g. "one-time payment". */
   billing: string
   description: string
@@ -36,16 +37,16 @@ export const plans: Plan[] = [
   {
     id: "personal",
     name: "Personal",
-    price: 49,
-    billing: "one-time payment",
+    price: null,
+    billing: "one-time payment, announced at launch",
     description: "For freelancers and solo developers.",
     features: ["All Pro dashboards & apps", "1 developer", "Unlimited personal & client projects", "Lifetime updates"],
   },
   {
     id: "team",
     name: "Team",
-    price: 129,
-    billing: "one-time payment",
+    price: null,
+    billing: "one-time payment, announced at launch",
     description: "For small teams and agencies.",
     features: ["Everything in Personal", "Up to 5 developers", "Priority support"],
     highlighted: true,
@@ -53,8 +54,8 @@ export const plans: Plan[] = [
   {
     id: "extended",
     name: "Extended",
-    price: 249,
-    billing: "one-time payment",
+    price: null,
+    billing: "one-time payment, announced at launch",
     description: "For SaaS products sold to end users.",
     features: ["Everything in Team", "Unlimited developers", "Use in paid SaaS products", "Private Discord channel"],
   },
