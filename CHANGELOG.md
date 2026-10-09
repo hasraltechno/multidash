@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-09
+
+`@multidash/ui` now has 35 components (up from 17), each with its own docs page.
+
 ### Added
 
 - Notifications panel in the header: unread count badge, All/Unread tabs, mark one or all as read, typed icons, empty state and a link to notification settings
@@ -20,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Button variants: `success`, `warning`, `soft`, `soft-success`, `soft-warning` and `soft-destructive`; Badge `soft` variant
 - Component documentation: an overview page plus one page per component with live examples, Preview/Code tabs, copy buttons, dependencies, full source and usage
 - Typography page with heading, paragraph, lead, list, blockquote, inline code and link styles
-- New components: Accordion, Alert, Data Table, Dialog, Popover, Select, Tabs and Toast (Sonner) — 25 free components in total, each with a docs page
+- New components: Accordion, Alert, Data Table, Dialog, Popover, Select, Tabs and Toast (Sonner) — each with a docs page
 - Data Table built on TanStack Table v9: global search, faceted filters, sortable headers, column visibility, row selection with bulk actions, row actions and page sizes
 - Tables page now shows three levels — basic, standard and advanced — each with Preview/Code
 - Dropdown Menu checkbox items and an indeterminate Checkbox state
@@ -68,5 +72,6 @@ First public release.
 - **SEO & sharing**: app icon, Apple touch icon, web manifest, Open Graph and Twitter images, and canonical URL configuration
 - **Monorepo tooling**: Turborepo, pnpm workspaces, shared TypeScript config, Next.js 16, React 19, Tailwind CSS v4 and TypeScript 6
 
-[Unreleased]: https://github.com/hasraltechno/multidash/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/hasraltechno/multidash/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/hasraltechno/multidash/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/hasraltechno/multidash/releases/tag/v0.1.0
