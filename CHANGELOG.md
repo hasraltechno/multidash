@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Code of Conduct (Contributor Covenant 2.1)
+
 ### Changed
 
 - Pro plan prices on the pricing page show "TBA" until Pro launches

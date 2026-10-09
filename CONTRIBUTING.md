@@ -2,6 +2,8 @@
 
 Thanks for your interest in improving Multidash! Bug reports, ideas and pull requests are all welcome.
 
+This project follows the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold it.
+
 ## Development setup
 
 ```bash
