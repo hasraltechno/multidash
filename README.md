@@ -49,6 +49,11 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 
 ## 🚀 Getting started
 
+There are two ways to use Multidash:
+
+- **Start a new dashboard from the template** — clone the repo below. Every page, component and the theme are included; no shadcn setup needed.
+- **Add components to a project you already have** — use the shadcn CLI or copy the source by hand. See [Use the components in another project](#use-the-components-in-another-project).
+
 Requirements: **Node.js 20+** and **pnpm** (`corepack enable pnpm`).
 
 ```bash
@@ -117,7 +122,7 @@ import { Button } from "@multidash/ui/components/button"
 
 ### Use the components in another project
 
-Every component is a [shadcn registry](https://ui.shadcn.com/docs/registry) item. In a project set up with `shadcn init`, this adds the component, the components it builds on, its npm packages and the extra theme tokens it uses:
+Every component is a [shadcn registry](https://ui.shadcn.com/docs/registry) item. The shadcn CLI isn't a dependency — `npx` runs it once and it copies the component's source into your project, so the code is yours to edit. You need a React project with Tailwind CSS v4 and a `components.json` (created by `npx shadcn@latest init`). Then this adds the component, the components it builds on, its npm packages and the extra theme tokens it uses:
 
 ```bash
 npx shadcn@latest add https://multidash-app.vercel.app/r/button.json
@@ -128,6 +133,8 @@ Swap `button` for any component name from the [docs](https://multidash-app.verce
 ```bash
 npx shadcn@latest add https://multidash-app.vercel.app/r/multidash-theme.json
 ```
+
+Prefer not to use the CLI? Each component page has a **Manual** tab with the dependencies and the full source to copy.
 
 ## 💎 Multidash Pro
 
