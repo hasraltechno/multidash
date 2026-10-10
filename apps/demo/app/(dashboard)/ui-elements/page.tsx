@@ -2,9 +2,12 @@ import type { Metadata } from "next"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@multidash/ui/components/card"
 
 import { CodeBlock } from "@/components/docs/code-block"
+import { CommandBlock } from "@/components/docs/command-block"
 import { PageHeader } from "@/components/page-header"
 import { componentDocs } from "@/lib/docs/components"
+import { registryConfig, registryNamespace } from "@/lib/docs/install"
 import { registryUrl, THEME } from "@/lib/docs/registry"
+import { siteConfig } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "UI Elements · Introduction",
@@ -57,12 +60,21 @@ export default function UiElementsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <CodeBlock code={`npx shadcn@latest add ${registryUrl("button")}`} lang="bash" />
+            <CommandBlock command={{ kind: "add", args: registryUrl("button") }} />
+            <p className="text-sm text-muted-foreground">
+              Using Multidash often? Add the registry to <code>components.json</code> once, then add components by
+              name, e.g. <code>{registryNamespace}/button</code>:
+            </p>
+            <CodeBlock code={registryConfig(siteConfig.url)} title="components.json" />
             <p className="text-sm text-muted-foreground">
               Want the full Multidash look? Add the theme too. It replaces your color tokens with the Multidash light
               and dark palette:
             </p>
-            <CodeBlock code={`npx shadcn@latest add ${registryUrl(THEME)}`} lang="bash" />
+            <CommandBlock command={{ kind: "add", args: registryUrl(THEME) }} />
+            <p className="text-sm text-muted-foreground">
+              Working with an AI assistant? Point it at <a href="/llms.txt" className="font-medium text-primary-text underline underline-offset-4">llms.txt</a>{" "}
+              — every component page is also available as Markdown.
+            </p>
           </CardContent>
         </Card>
 

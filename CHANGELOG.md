@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 - shadcn registry: every component can be added to another project with `npx shadcn@latest add https://multidash-app.vercel.app/r/<name>.json`, including the components it builds on, its npm packages and the extra theme tokens it uses. A `multidash-theme` item adds the full color theme. Component pages show the command
+- Component docs: the install command sits under the title, Installation has CLI and Manual tabs, and every command switches between pnpm, npm, yarn and bun (remembered between visits)
+- `@multidash` registry namespace: add it to `components.json` once, then `npx shadcn@latest add @multidash/<name>`
+- Copy page menu on each component page: copy or view the page as Markdown, copy the link or install command, or open it in ChatGPT or Claude
+- Markdown version of every component page (`/ui-elements/<name>.md`) and an `llms.txt` index for AI assistants
 - Code of Conduct (Contributor Covenant 2.1)
 
 ### Changed

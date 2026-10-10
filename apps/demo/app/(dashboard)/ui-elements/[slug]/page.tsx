@@ -4,12 +4,18 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react"
 import { Badge } from "@multidash/ui/components/badge"
 import { Button } from "@multidash/ui/components/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@multidash/ui/components/tabs"
 
 import { CodeBlock } from "@/components/docs/code-block"
+import { CommandBlock } from "@/components/docs/command-block"
 import { ComponentPreview } from "@/components/docs/component-preview"
+import { CopyPageMenu } from "@/components/docs/copy-page-menu"
 import { componentDocs, getComponentDoc } from "@/lib/docs/components"
+import { registryConfig, registryNamespace } from "@/lib/docs/install"
+import { markdownUrl } from "@/lib/docs/markdown"
 import { registryUrl } from "@/lib/docs/registry"
 import { getAllDependencies, getComponentDependencies, getExports, readComponentSource } from "@/lib/docs/source"
+import { siteConfig } from "@/lib/site"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -51,6 +57,8 @@ export default async function ComponentDocPage({ params }: Props) {
   const prev = componentDocs[index - 1]
   const next = componentDocs[index + 1]
 
+  const addCommand = { kind: "add", args: registryUrl(slug) } as const
+
   const importCode = `import {\n${exports.map((e) => `  ${e},`).join("\n")}\n} from "@multidash/ui/components/${slug}"`
 
   return (
@@ -68,30 +76,43 @@ export default async function ComponentDocPage({ params }: Props) {
         {dependencies.includes("radix-ui") && (
           <Badge variant="secondary">Built on Radix UI</Badge>
         )}
+        <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+          <CommandBlock command={addCommand} compact className="min-w-0 sm:max-w-xl sm:flex-1" />
+          <CopyPageMenu
+            name={doc.name}
+            pageUrl={`${siteConfig.url}/ui-elements/${slug}`}
+            markdownUrl={markdownUrl(slug)}
+            installCommand={addCommand}
+          />
+        </div>
       </header>
 
       <ComponentPreview path={`${slug}/${doc.examples[0]!.id}`} align={align} />
 
       <Section id="installation" title="Installation">
-        <div className="space-y-6">
-          <div className="space-y-2">
+        <p className="text-sm text-muted-foreground">
+          Add {doc.name} with the shadcn CLI, or copy the source by hand. In this repo there&apos;s nothing to install —
+          import it from <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">@multidash/ui</code>.
+        </p>
+        <Tabs defaultValue="cli" className="gap-4">
+          <TabsList>
+            <TabsTrigger value="cli">CLI</TabsTrigger>
+            <TabsTrigger value="manual">Manual</TabsTrigger>
+          </TabsList>
+          <TabsContent value="cli" className="space-y-3">
+            <CommandBlock command={addCommand} />
             <p className="text-sm text-muted-foreground">
-              <strong className="font-medium text-foreground">In this repo</strong> — nothing to install. Import it from{" "}
-              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">@multidash/ui</code>.
+              Adds the component, the components it builds on, its npm packages and the theme tokens it uses. Using
+              Multidash often? Add the registry to{" "}
+              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">components.json</code> once:
             </p>
-          </div>
-          <div className="space-y-3">
-            <p className="text-sm text-muted-foreground">
-              <strong className="font-medium text-foreground">With the shadcn CLI</strong> — adds the component, the
-              components it builds on, its npm packages and the theme tokens it needs:
-            </p>
-            <CodeBlock code={`npx shadcn@latest add ${registryUrl(slug)}`} lang="bash" />
-          </div>
-          <div className="space-y-3">
-            <p className="text-sm text-muted-foreground">
-              <strong className="font-medium text-foreground">Manually</strong> — install the dependencies:
-            </p>
-            <CodeBlock code={`pnpm add ${dependencies.join(" ")}`} lang="bash" />
+            <CodeBlock code={registryConfig(siteConfig.url)} title="components.json" />
+            <p className="text-sm text-muted-foreground">Then add components by name:</p>
+            <CommandBlock command={{ kind: "add", args: `${registryNamespace}/${slug}` }} />
+          </TabsContent>
+          <TabsContent value="manual" className="space-y-3">
+            <p className="text-sm text-muted-foreground">Install the dependencies:</p>
+            <CommandBlock command={{ kind: "install", args: dependencies.join(" ") }} />
             <p className="text-sm text-muted-foreground">
               Then copy the source into{" "}
               <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">components/ui/{slug}.tsx</code>{" "}
@@ -120,8 +141,8 @@ export default async function ComponentDocPage({ params }: Props) {
                 <CodeBlock code={source} title={`components/ui/${slug}.tsx`} />
               </div>
             </details>
-          </div>
-        </div>
+          </TabsContent>
+        </Tabs>
       </Section>
 
       <Section id="usage" title="Usage">
