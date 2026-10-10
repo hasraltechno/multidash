@@ -72,12 +72,12 @@ export default async function ComponentDocPage({ params }: Props) {
           <span className="text-foreground">{doc.name}</span>
         </nav>
         <h1 className="text-3xl font-semibold tracking-tight">{doc.name}</h1>
-        <p className="text-lg text-muted-foreground">{doc.description}</p>
+        <p className="text-base text-muted-foreground">{doc.description}</p>
         {dependencies.includes("radix-ui") && (
           <Badge variant="secondary">Built on Radix UI</Badge>
         )}
         <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
-          <CommandBlock command={addCommand} compact className="min-w-0 sm:max-w-xl sm:flex-1" />
+          <CommandBlock command={addCommand} compact className="min-w-0 sm:w-fit" />
           <CopyPageMenu
             name={doc.name}
             pageUrl={`${siteConfig.url}/ui-elements/${slug}`}
