@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@multidash/ui/components/dropdown-menu"
 
+import { ClaudeIcon, OpenAIIcon } from "@/components/icons"
 import { formatCommand, type Command } from "@/lib/docs/install"
 
 import { usePackageManager } from "./command-block"
@@ -90,13 +91,13 @@ export function CopyPageMenu({
           <DropdownMenuLabel className="text-xs font-normal text-muted-foreground">Ask about this component</DropdownMenuLabel>
           <DropdownMenuItem asChild>
             <a href={`https://chatgpt.com/?q=${encodeURIComponent(prompt)}`} target="_blank" rel="noreferrer">
-              Open in ChatGPT
+              <OpenAIIcon /> Open in ChatGPT
               <ExternalLink className="ml-auto" aria-hidden />
             </a>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <a href={`https://claude.ai/new?q=${encodeURIComponent(prompt)}`} target="_blank" rel="noreferrer">
-              Open in Claude
+              <ClaudeIcon /> Open in Claude
               <ExternalLink className="ml-auto" aria-hidden />
             </a>
           </DropdownMenuItem>

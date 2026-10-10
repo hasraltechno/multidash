@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Changed
 
 - Pro plan prices on the pricing page show "TBA" until Pro launches
+- Focus rings show for keyboard users only: after a mouse or touch interaction they're hidden on buttons and menus (text fields keep theirs), so closing a menu no longer leaves a ring on its trigger
 
 ## [0.2.0] - 2026-10-09
 
