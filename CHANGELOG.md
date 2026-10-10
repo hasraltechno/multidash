@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- shadcn registry: every component can be added to another project with `npx shadcn@latest add https://multidash-app.vercel.app/r/<name>.json`, including the components it builds on, its npm packages and the extra theme tokens it uses. A `multidash-theme` item adds the full color theme. Component pages show the command
 - Code of Conduct (Contributor Covenant 2.1)
 
 ### Changed

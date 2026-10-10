@@ -28,6 +28,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 - 🌗 **Light / dark / system** theme plus a **theme customizer** — primary color, backgrounds, card style, radius and monochrome
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
 - 🧩 **35 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
+- 📥 **shadcn registry** — add any component to your own project with `npx shadcn@latest add`
 - 📱 **Fully responsive** — minimizable sidebar on desktop (⌘B), drawer on mobile
 - ♿ **Accessible** — keyboard navigation, ARIA labels, reduced-motion support
 - 📦 **Turborepo monorepo** — share the UI package across apps
@@ -112,6 +113,20 @@ Use a component anywhere in the app:
 import { Button } from "@multidash/ui/components/button"
 
 <Button variant="outline">Click me</Button>
+```
+
+### Use the components in another project
+
+Every component is a [shadcn registry](https://ui.shadcn.com/docs/registry) item. In a project set up with `shadcn init`, this adds the component, the components it builds on, its npm packages and the extra theme tokens it uses:
+
+```bash
+npx shadcn@latest add https://multidash-app.vercel.app/r/button.json
+```
+
+Swap `button` for any component name from the [docs](https://multidash-app.vercel.app/ui-elements). To use the full Multidash color theme as well:
+
+```bash
+npx shadcn@latest add https://multidash-app.vercel.app/r/multidash-theme.json
 ```
 
 ## 💎 Multidash Pro

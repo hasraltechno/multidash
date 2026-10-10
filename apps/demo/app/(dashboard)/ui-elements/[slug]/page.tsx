@@ -8,6 +8,7 @@ import { Button } from "@multidash/ui/components/button"
 import { CodeBlock } from "@/components/docs/code-block"
 import { ComponentPreview } from "@/components/docs/component-preview"
 import { componentDocs, getComponentDoc } from "@/lib/docs/components"
+import { registryUrl } from "@/lib/docs/registry"
 import { getAllDependencies, getComponentDependencies, getExports, readComponentSource } from "@/lib/docs/source"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -81,13 +82,20 @@ export default async function ComponentDocPage({ params }: Props) {
           </div>
           <div className="space-y-3">
             <p className="text-sm text-muted-foreground">
-              <strong className="font-medium text-foreground">In your own project</strong> — install the dependencies:
+              <strong className="font-medium text-foreground">With the shadcn CLI</strong> — adds the component, the
+              components it builds on, its npm packages and the theme tokens it needs:
+            </p>
+            <CodeBlock code={`npx shadcn@latest add ${registryUrl(slug)}`} lang="bash" />
+          </div>
+          <div className="space-y-3">
+            <p className="text-sm text-muted-foreground">
+              <strong className="font-medium text-foreground">Manually</strong> — install the dependencies:
             </p>
             <CodeBlock code={`pnpm add ${dependencies.join(" ")}`} lang="bash" />
             <p className="text-sm text-muted-foreground">
               Then copy the source into{" "}
               <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">components/ui/{slug}.tsx</code>{" "}
-              (requires the <Link href="/ui-elements#install-heading" className="text-primary-text underline underline-offset-4">cn() helper and theme tokens</Link>):
+              (requires the <Link href="/ui-elements#manual-install" className="text-primary-text underline underline-offset-4">cn() helper and theme tokens</Link>):
             </p>
             {requiredComponents.length > 0 && (
               <p className="text-sm text-muted-foreground">

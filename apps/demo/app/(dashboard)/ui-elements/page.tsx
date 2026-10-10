@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@mult
 import { CodeBlock } from "@/components/docs/code-block"
 import { PageHeader } from "@/components/page-header"
 import { componentDocs } from "@/lib/docs/components"
+import { registryUrl, THEME } from "@/lib/docs/registry"
 
 export const metadata: Metadata = {
   title: "UI Elements · Introduction",
@@ -46,9 +47,28 @@ export default function UiElementsPage() {
       />
 
       <section aria-labelledby="install-heading" className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+        <Card className="xl:col-span-2">
+          <CardHeader>
+            <CardTitle id="install-heading">Install with the shadcn CLI</CardTitle>
+            <CardDescription>
+              Every component is also a shadcn registry item. In a project set up with <code>shadcn init</code>, one
+              command adds the component, the components it builds on, its npm packages and the extra theme tokens it
+              uses. Your existing colors are left alone.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <CodeBlock code={`npx shadcn@latest add ${registryUrl("button")}`} lang="bash" />
+            <p className="text-sm text-muted-foreground">
+              Want the full Multidash look? Add the theme too. It replaces your color tokens with the Multidash light
+              and dark palette:
+            </p>
+            <CodeBlock code={`npx shadcn@latest add ${registryUrl(THEME)}`} lang="bash" />
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
-            <CardTitle id="install-heading">Use in this project</CardTitle>
+            <CardTitle>Use in this project</CardTitle>
             <CardDescription>
               Every component is already available in the monorepo through the <code>@multidash/ui</code> package.
             </CardDescription>
@@ -60,8 +80,8 @@ export default function UiElementsPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Use in another Next.js project</CardTitle>
-            <CardDescription>Components are plain source files — copy the ones you need.</CardDescription>
+            <CardTitle id="manual-install" className="scroll-mt-24">Copy by hand</CardTitle>
+            <CardDescription>Prefer not to use the CLI? Components are plain source files — copy the ones you need.</CardDescription>
           </CardHeader>
           <CardContent>
             <ol className="space-y-6">
