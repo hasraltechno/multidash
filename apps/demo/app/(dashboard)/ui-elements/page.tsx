@@ -54,10 +54,7 @@ export default function UiElementsPage() {
         description={`${componentDocs.length} free components with live examples and copy-paste code, built on Radix UI and Tailwind CSS. Pick a component from the UI Elements menu in the sidebar.`}
       />
 
-      <section aria-labelledby="choose-heading" className="space-y-4">
-        <h2 id="choose-heading" className="text-lg font-semibold tracking-tight">
-          Two ways to use Multidash
-        </h2>
+      <section aria-label="Ways to use Multidash">
         <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
           <Card>
             <CardHeader>
