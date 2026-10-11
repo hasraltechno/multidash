@@ -13,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@multidash/ui/components/dropdown-menu"
+import { ScrollShadow } from "@multidash/ui/components/scroll-shadow"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@multidash/ui/components/tooltip"
 import { cn } from "@multidash/ui/lib/utils"
 
@@ -258,7 +259,8 @@ export function SidebarNav({
         )}
       </div>
 
-      <nav className="flex-1 space-y-6 overflow-x-hidden overflow-y-auto px-3 py-4 collapsed:space-y-3 collapsed:px-2">
+      {/* The menu fades at the top or bottom while there's more to scroll, instead of showing a scrollbar. */}
+      <ScrollShadow as="nav" size={32} className="flex-1 space-y-6 overflow-x-hidden px-3 py-4 collapsed:space-y-3 collapsed:px-2">
         {navGroups.map((group, index) => (
           <div key={group.label}>
             <p className="mb-2 px-3 text-xs font-medium tracking-wide text-muted-foreground uppercase collapsed:sr-only">
@@ -278,7 +280,7 @@ export function SidebarNav({
             </ul>
           </div>
         ))}
-      </nav>
+      </ScrollShadow>
 
       <div className="p-3 collapsed:px-2">
         <div className="rounded-lg border bg-gradient-to-br from-primary/10 to-transparent p-4 collapsed:hidden">
