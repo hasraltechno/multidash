@@ -7,6 +7,11 @@ export type ComponentDoc = {
   description: string
   /** "full" for wide components (tables) — previews fill the box instead of centering. */
   layout?: "centered" | "full"
+  /**
+   * Whether to show "Built on Radix UI". Follows the dependencies by default (Combobox counts, through Popover);
+   * set false for a component that only uses Radix through a Button.
+   */
+  radix?: boolean
   examples: { id: string; title: string; description?: string }[]
 }
 
@@ -196,6 +201,20 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { id: "basic", title: "Basic" },
       { id: "cards", title: "Selectable cards", description: "Wrap each option in its label and style the checked state with has-[]." },
+    ],
+  },
+  {
+    slug: "scroll-shadow",
+    name: "Scroll Shadow",
+    radix: false,
+    description: "A scroll area whose edges fade while there's more to see, instead of a scrollbar.",
+    examples: [
+      { id: "vertical", title: "Vertical list", description: "The fade appears at an edge only while there's more to scroll that way." },
+      {
+        id: "horizontal",
+        title: "Horizontal with arrows",
+        description: "arrows adds ‹ › buttons for mouse users without a trackpad; keyboard users tab through the items.",
+      },
     ],
   },
   {

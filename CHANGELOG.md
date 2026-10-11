@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Scroll Shadow component: a scroll area whose edges fade while there's more to see, with a hidden scrollbar and optional ‹ › arrows for horizontal rows. Docs page with vertical and horizontal examples
 - shadcn registry: every component can be added to another project with `npx shadcn@latest add https://multidash-app.vercel.app/r/<name>.json`, including the components it builds on, its npm packages and the extra theme tokens it uses. A `multidash-theme` item adds the full color theme. Component pages show the command
 - Component docs: the install command sits under the title, Installation has CLI and Manual tabs, and every command switches between pnpm, npm, yarn and bun (remembered between visits)
 - `@multidash` registry namespace: add it to `components.json` once, then `npx shadcn@latest add @multidash/<name>`

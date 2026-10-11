@@ -50,6 +50,8 @@ import ProgressBasic from "./progress/basic"
 import ProgressCustomColor from "./progress/custom-color"
 import RadioGroupBasic from "./radio-group/basic"
 import RadioGroupCards from "./radio-group/cards"
+import ScrollShadowHorizontal from "./scroll-shadow/horizontal"
+import ScrollShadowVertical from "./scroll-shadow/vertical"
 import SelectBasic from "./select/basic"
 import SelectGroups from "./select/groups"
 import SeparatorBasic from "./separator/basic"
@@ -133,6 +135,8 @@ export const examples: Record<string, ComponentType> = {
   "progress/custom-color": ProgressCustomColor,
   "radio-group/basic": RadioGroupBasic,
   "radio-group/cards": RadioGroupCards,
+  "scroll-shadow/horizontal": ScrollShadowHorizontal,
+  "scroll-shadow/vertical": ScrollShadowVertical,
   "select/basic": SelectBasic,
   "select/groups": SelectGroups,
   "separator/basic": SeparatorBasic,

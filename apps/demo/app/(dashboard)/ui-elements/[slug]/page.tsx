@@ -73,7 +73,7 @@ export default async function ComponentDocPage({ params }: Props) {
         </nav>
         <h1 className="text-3xl font-semibold tracking-tight">{doc.name}</h1>
         <p className="text-base text-muted-foreground">{doc.description}</p>
-        {dependencies.includes("radix-ui") && (
+        {(doc.radix ?? dependencies.includes("radix-ui")) && (
           <Badge variant="secondary">Built on Radix UI</Badge>
         )}
         <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">

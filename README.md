@@ -27,7 +27,7 @@ Clean, accessible and responsive — with light/dark mode, colorblind-safe chart
 - 🎨 **Tailwind CSS v4** with a single token file for rebranding
 - 🌗 **Light / dark / system** theme plus a **theme customizer** — primary color, backgrounds, card style, radius and monochrome
 - 📊 **Charts** with Recharts — colorblind-safe palette, tooltips, screen-reader data tables
-- 🧩 **35 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
+- 🧩 **36 UI components** (`@multidash/ui`) built on Radix UI primitives — each with docs, live examples and copy-paste code
 - 📥 **shadcn registry** — add any component to your own project with `npx shadcn@latest add`
 - 📱 **Fully responsive** — minimizable sidebar on desktop (⌘B), drawer on mobile
 - ♿ **Accessible** — keyboard navigation, ARIA labels, reduced-motion support
