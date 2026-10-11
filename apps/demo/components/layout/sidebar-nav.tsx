@@ -36,8 +36,10 @@ function isActive(href: string, pathname: string) {
 
 /** Shows a label to the right of an icon-only item, but only while the desktop sidebar is minimized. */
 function CollapsedTooltip({ label, enabled, children }: { label: React.ReactNode; enabled: boolean; children: React.ReactNode }) {
+  // Always controlled: switching `open` between undefined and false makes React warn.
+  const [open, setOpen] = useState(false)
   return (
-    <Tooltip open={enabled ? undefined : false}>
+    <Tooltip open={enabled && open} onOpenChange={setOpen}>
       <TooltipTrigger asChild>{children}</TooltipTrigger>
       <TooltipContent side="right" sideOffset={8}>
         {label}
