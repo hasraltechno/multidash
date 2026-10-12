@@ -102,6 +102,11 @@ function NavCollapsible({
   onNavigate?: () => void
 }) {
   const inSection = isActive(item.href, pathname)
+  // The deepest child the page is in: /ui-elements/button highlights Button, not the section's own /ui-elements.
+  // A child at the section's own address (an overview) only matches exactly, so other pages don't light it up.
+  const current = item
+    .children!.filter((child) => pathname === child.href || (child.href !== item.href && pathname.startsWith(`${child.href}/`)))
+    .sort((a, b) => b.href.length - a.href.length)[0]?.href
   const [open, setOpen] = useState(inSection)
   const listId = useId()
   const activeRef = useRef<HTMLAnchorElement>(null)
@@ -135,7 +140,7 @@ function NavCollapsible({
         {open && (
           <ul id={listId} className="mt-0.5 ml-5 space-y-0.5 border-l pl-2">
             {item.children!.map((child) => {
-              const active = pathname === child.href
+              const active = child.href === current
               return (
                 <li key={child.href}>
                   <Link
@@ -173,8 +178,8 @@ function NavCollapsible({
             <DropdownMenuLabel>{item.title}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {item.children!.map((child) => (
-              <DropdownMenuItem key={child.href} asChild className={cn(pathname === child.href && "bg-accent font-medium")}>
-                <Link href={child.href} aria-current={pathname === child.href ? "page" : undefined}>
+              <DropdownMenuItem key={child.href} asChild className={cn(child.href === current && "bg-accent font-medium")}>
+                <Link href={child.href} aria-current={child.href === current ? "page" : undefined}>
                   {child.title}
                 </Link>
               </DropdownMenuItem>
