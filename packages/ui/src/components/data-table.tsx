@@ -416,7 +416,8 @@ export function DataTable<TData extends RowData>({
         </div>
       </div>
 
-      <div className="rounded-lg border">
+      {/* A card of its own, so the table stands out on the page; the table inside scrolls sideways when it must. */}
+      <div className="overflow-hidden rounded-lg border bg-card text-card-foreground">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
